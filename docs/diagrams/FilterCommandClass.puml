@@ -1,0 +1,28 @@
+@startuml
+hide circle
+skinparam classAttributeIconSize 0
+
+Class "{abstract}\nCommand" as Command {
+  +execute(Model): CommandResult
+}
+Class FilterCommand {
+  +COMMAND_WORD: String
+  +MESSAGE_USAGE: String
+  +execute(Model): CommandResult
+}
+Class hasMatchingTagPredicate {
+  +test(Person): Boolean
+}
+Class "<<interface>>\nPredicate<Person>" as Predicate {
+  +test(Person): Boolean
+}
+Class "filterTag: String" as String
+Class Model
+
+FilterCommand -up-|> Command
+FilterCommand -> "1" hasMatchingTagPredicate
+FilterCommand .down.> Model
+hasMatchingTagPredicate .up.|> Predicate
+hasMatchingTagPredicate -> "1..*" String
+
+@enduml
