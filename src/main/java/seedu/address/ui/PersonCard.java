@@ -8,6 +8,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.address.model.person.Person;
+import seedu.address.model.tag.Tag;
 
 /**
  * An UI component that displays information of a {@code Person}.
@@ -54,6 +55,24 @@ public class PersonCard extends UiPart<Region> {
         email.setText(person.getEmail().value);
         person.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))
-                .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+                .forEach(this::createTagLabel);
+    }
+
+    public void createTagLabel(Tag tag) {
+        Label tagLabel = new Label(tag.tagName);
+        switch (tag.tagName) {
+        case "customer":
+            tagLabel.setStyle("-fx-background-color: #F5B041;");
+            break;
+        case "employee":
+            tagLabel.setStyle("-fx-background-color: #5DADE2;");
+            break;
+        case "supplier":
+            tagLabel.setStyle("-fx-background-color: #F1948A;");
+            break;
+        default:
+            tagLabel.setStyle("-fx-background-color: #52BE80;");
+        }
+        tags.getChildren().add(tagLabel);
     }
 }
