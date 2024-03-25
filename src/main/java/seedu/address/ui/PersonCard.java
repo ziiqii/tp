@@ -68,10 +68,10 @@ public class PersonCard extends UiPart<Region> {
             tagLabel.setStyle("-fx-background-color: #5DADE2;");
             break;
         case "supplier":
-            tagLabel.setStyle("-fx-background-color: #F1948A;");
+            tagLabel.setStyle("-fx-background-color: #52BE80;");
             break;
         default:
-            tagLabel.setStyle("-fx-background-color: #52BE80;");
+            tagLabel.setStyle("-fx-background-color: #EAECEE;");
         }
         tags.getChildren().add(tagLabel);
     }
