@@ -158,6 +158,22 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 
 This section describes some noteworthy details on how certain features are implemented.
 
+### Filter command
+
+The filtering of contacts by tag is facilitated by `HasMatchingTagPredicate`. It implements the `Predicate<Person>` interface and overrides the `test(Person)` method, which is used to decide which `Person`s will be displayed after the filter command. The `test(Person)` method will return true only if the person has a tag matching every filter tag.
+
+<puml src="diagrams/FilterCommandClass.puml" alt="FilterClassDiagram" />
+
+The following sequence diagram shows how a filter command goes through the `Logic` component.
+
+<puml src="diagrams/FilterSequenceDiagram-Logic.puml" alt="FilterSequenceDiagram" />
+
+<box type="info" seamless>
+
+**Note:** The lifeline for `FilterCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
+</box>
+
+
 ### \[Proposed\] Undo/redo feature
 
 #### Proposed Implementation
