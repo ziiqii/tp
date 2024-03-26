@@ -11,18 +11,17 @@ Class FilterCommand {
   +execute(Model): CommandResult
 }
 Class hasMatchingTagPredicate {
+  -filterTags: List<String>
   +test(Person): Boolean
 }
 Class "<<interface>>\nPredicate<Person>" as Predicate {
   +test(Person): Boolean
 }
-Class "filterTag: String" as String
 Class Model
 
 FilterCommand -up-|> Command
 FilterCommand -> "1" hasMatchingTagPredicate
 FilterCommand .down.> Model
 hasMatchingTagPredicate .up.|> Predicate
-hasMatchingTagPredicate -> "1..*" String
 
 @enduml
