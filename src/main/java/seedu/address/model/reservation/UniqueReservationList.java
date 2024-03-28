@@ -4,6 +4,7 @@ package seedu.address.model.reservation;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -56,6 +57,13 @@ public class UniqueReservationList implements Iterable<Reservation> {
         if (!internalList.remove(toRemove)) {
             throw new ReservationNotFoundException();
         }
+    }
+
+    /**
+     *  Sorts the reservations from earliest to latest.
+     */
+    public void sort(Comparator<Reservation> comparator) {
+        this.internalList.sort(comparator);
     }
 
     public void setReservations(UniqueReservationList replacement) {

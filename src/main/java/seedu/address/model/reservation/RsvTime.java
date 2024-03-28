@@ -31,6 +31,9 @@ public class RsvTime {
         return test.matches(VALIDATION_REGEX);
     }
 
+    public int getTimeInInteger() {
+        return Integer.parseInt(this.value);
+    }
     @Override
     public String toString() {
         return this.value;

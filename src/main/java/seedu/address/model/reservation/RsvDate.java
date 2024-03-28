@@ -43,6 +43,10 @@ public class RsvDate {
         }
     }
 
+    public LocalDate getValue() {
+        return this.value;
+    }
+
     @Override
     public String toString() {
         return value.format(FORMATTER);

@@ -1,6 +1,7 @@
 package seedu.address.model;
 
 import java.nio.file.Path;
+import java.util.Comparator;
 import java.util.function.Predicate;
 
 import javafx.collections.ObservableList;
@@ -111,6 +112,11 @@ public interface Model {
      * {@code reservation} must not already exist in the address book.
      */
     void addReservation(Reservation reservation);
+
+    /**
+     * Sorts the reservations from earliest to latest.
+     */
+    void sortReservation(Comparator<Reservation> comparator);
 
     /** Returns an unmodifiable view of the filtered reservation list */
     ObservableList<Reservation> getFilteredReservationList();

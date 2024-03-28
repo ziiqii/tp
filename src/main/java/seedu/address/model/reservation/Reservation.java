@@ -2,6 +2,7 @@ package seedu.address.model.reservation;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 import seedu.address.commons.util.ToStringBuilder;
@@ -27,6 +28,24 @@ public class Reservation {
         this.date = date;
         this.time = time;
         this.pax = pax;
+    }
+
+    /**
+     * Returns value of date.
+     *
+     * @return Value of date.
+     */
+    public LocalDate getDateValue() {
+        return this.date.getValue();
+    }
+
+    /**
+     * Returns value of time in integer for comparison.
+     *
+     * @return Value of time in integer.
+     */
+    public int getTimeValue() {
+        return this.time.getTimeInInteger();
     }
 
     public Person getPerson() {
