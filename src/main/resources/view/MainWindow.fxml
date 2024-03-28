@@ -47,15 +47,15 @@
             <Insets top="5" right="10" bottom="5" left="10" />
           </padding>
         </StackPane>
-        
+
         <HBox VBox.vgrow="ALWAYS">
           <VBox fx:id="personList" styleClass="pane-with-border" minWidth="340" prefWidth="340" HBox.hgrow="ALWAYS">
             <padding>
               <Insets top="10" right="10" bottom="10" left="10" />
             </padding>
             <HBox>
-              <Label fx:id ="activeListLabel" text="Active" />
-              <Label fx:id ="archivedListLabel" text="Archive" />
+              <Label fx:id ="activeListLabel" text="Active" styleClass="currentListLabel"/>
+              <Label fx:id ="archivedListLabel" text="Archive" styleClass="hiddenListLabel"/>
             </HBox>
             <StackPane fx:id="personListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
           </VBox>
@@ -64,7 +64,7 @@
             <padding>
               <Insets top="10" right="10" bottom="10" left="10" />
             </padding>
-            <Label text="Reservations" styleClass="heading"/>
+            <Label text="Reservations" styleClass="currentListLabel"/>
             <StackPane fx:id="reservationListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
           </VBox>
         </HBox>

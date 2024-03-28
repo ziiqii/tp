@@ -357,7 +357,7 @@
     -fx-underline: true;
 }
 
-#activeListLabel {
+.currentListLabel {
     -fx-background-color: transparent;
     -fx-border-color: #CCCCCC;
     -fx-border-width: 0 0 1 0; /* Bottom border only */
@@ -369,7 +369,7 @@
     -fx-opacity: 1;
 }
 
-#archivedListLabel {
+.hiddenListLabel {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
     -fx-border-width: 0 0 1 0; /* Bottom border only */
