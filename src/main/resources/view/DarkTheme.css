@@ -350,3 +350,21 @@
     -fx-background-radius: 2;
     -fx-font-size: 11;
 }
+
+.button {
+    -fx-background-color: transparent;
+    -fx-border-color: #CCCCCC;
+    -fx-border-width: 0 0 1 0; /* Bottom border only */
+    -fx-border-style: solid;
+    -fx-padding: 8 10; /* Adjust padding as needed */
+    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+
+.button:hover {
+    -fx-background-color: #808080;
+}
+
+
