@@ -58,6 +58,12 @@ public class PersonCard extends UiPart<Region> {
                 .forEach(this::createTagLabel);
     }
 
+    /**
+     * Creates orange Label for customer, blue Label for employee, green Label for supplier,
+     * and grey Label for everything else. The created Label is then added to the tag FlowPane.
+     *
+     * @param tag The tag object for which a label is to be created.
+     */
     public void createTagLabel(Tag tag) {
         Label tagLabel = new Label(tag.tagName);
         switch (tag.tagName) {

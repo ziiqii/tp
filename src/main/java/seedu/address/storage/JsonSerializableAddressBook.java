@@ -52,12 +52,12 @@ class JsonSerializableAddressBook {
                 .stream()
                 .map(JsonAdaptedPerson::new)
                 .collect(Collectors.toList()));
-      
+
         persons.addAll(source.getPersonList()
                 .stream()
                 .map(JsonAdaptedPerson::new)
                 .collect(Collectors.toList()));
-      
+
         reservations.addAll(source.getReservationList()
                 .stream()
                 .map(JsonAdaptedReservation::new)

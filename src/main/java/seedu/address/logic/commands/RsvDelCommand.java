@@ -39,7 +39,8 @@ public class RsvDelCommand extends Command {
 
         Reservation reservationToDelete = lastShownList.get(targetIndex.getZeroBased());
         model.deleteReservation(reservationToDelete);
-        return new CommandResult(String.format(MESSAGE_DELETE_RESERVATION_SUCCESS, Messages.format(reservationToDelete)));
+        return new CommandResult(String.format(MESSAGE_DELETE_RESERVATION_SUCCESS,
+                Messages.format(reservationToDelete)));
     }
 
     @Override

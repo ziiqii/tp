@@ -20,9 +20,9 @@ import seedu.address.logic.commands.FilterCommand;
 import seedu.address.logic.commands.FindCommand;
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.ListCommand;
+import seedu.address.logic.commands.RsvCommand;
 import seedu.address.logic.commands.RsvDelCommand;
 import seedu.address.logic.commands.UnarchiveCommand;
-import seedu.address.logic.commands.RsvCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
 /**

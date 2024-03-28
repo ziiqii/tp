@@ -59,7 +59,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     public void setArchivedPersons(List<Person> archivedPersons) {
         this.archivedPersons.setPersons(archivedPersons);
     }
-      
+
     /**
      * Replaces the contents of the person list with {@code persons}.
      * {@code persons} must not contain duplicate persons.
@@ -199,7 +199,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     public ObservableList<Person> getArchivedPersonList() {
         return archivedPersons.asUnmodifiableObservableList();
     }
-    
+
     @Override
     public ObservableList<Reservation> getReservationList() {
         return reservations.asUnmodifiableObservableList();
