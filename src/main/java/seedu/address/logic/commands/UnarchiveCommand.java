@@ -18,7 +18,7 @@ public class UnarchiveCommand extends Command {
             + ": Unarchives the person identified by the index number used in the displayed person list.\n"
             + "Parameters: INDEX (must be a positive integer)\n"
             + "Example: " + COMMAND_WORD + " 1";
-    public static final String MESSAGE_UNARCHIVE_PERSON_SUCCESS = "%1$s has been unarchived. Type “list” to "
+    public static final String MESSAGE_UNARCHIVE_PERSON_SUCCESS = "Unarchived Person: %1$s.\nType “list” to "
             + "view all your currently active contacts.";
     public static final String MESSAGE_NOT_VIEWING_ARCHIVED = "This command can only be used while "
             + "viewing the archived list.";
