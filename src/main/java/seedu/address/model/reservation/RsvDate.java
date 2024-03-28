@@ -17,7 +17,7 @@ public class RsvDate {
             "Reservation date should be valid, and in yyyy-MM-dd format";
     private static final DateTimeFormatter FORMATTER =
             DateTimeFormatter.ofPattern("uuuu-MM-dd").withResolverStyle(ResolverStyle.STRICT);
-    private final LocalDate value;
+    public final LocalDate value;
 
     /**
      * Constructs a {@code RsvDate}.
