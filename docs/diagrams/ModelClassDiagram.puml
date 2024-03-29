@@ -13,12 +13,18 @@ Class ModelManager
 Class UserPrefs
 
 Class UniquePersonList
-Class Person
+Class "    Person    "
 Class Address
 Class Email
 Class Name
 Class Phone
 Class Tag
+
+Class UniqueReservationList
+Class Reservation
+Class RsvDate
+Class RsvTime
+Class Pax
 
 Class I #FFFFFF
 }
@@ -35,20 +41,30 @@ ModelManager -left-> "1" AddressBook
 ModelManager -right-> "1" UserPrefs
 UserPrefs .up.|> ReadOnlyUserPrefs
 
-AddressBook *--> "1" UniquePersonList
-UniquePersonList --> "~* all" Person
-Person *--> Name
-Person *--> Phone
-Person *--> Email
-Person *--> Address
-Person *--> "*" Tag
+AddressBook --> "2" UniquePersonList
+AddressBook --> "1" UniqueReservationList
 
-Person -[hidden]up--> I
+UniquePersonList --> "~* all" "    Person    "
+"    Person    " *--> Name
+"    Person    " *--> Phone
+"    Person    " *--> Email
+"    Person    " *--> Address
+"    Person    " *--> "*" Tag
+
+UniqueReservationList --> "~* all" Reservation
+Reservation --> "    Person    "
+Reservation *--> RsvDate
+Reservation *--> RsvTime
+Reservation *--> Pax
+
+
+"    Person    " -[hidden]up--> I
 UniquePersonList -[hidden]right-> I
 
 Name -[hidden]right-> Phone
 Phone -[hidden]right-> Address
 Address -[hidden]right-> Email
 
-ModelManager --> "~* filtered" Person
+ModelManager --> "~* filtered" "    Person    "
+ModelManager --> "~* filtered" Reservation
 @enduml

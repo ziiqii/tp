@@ -196,6 +196,31 @@ Step 5. The user can then click the `X` on top right corner or press`Q` on keybo
   * Pros: Easy to implement and no change needed in the future.
   * Cons: Not very useful and convenient as a quick reference.
 
+### Filter command
+
+The filtering of contacts by tag is facilitated by `HasMatchingTagPredicate`. It implements the `Predicate<Person>` interface and overrides the `test(Person)` method, which is used to decide which `Person`s will be displayed after the filter command. The `test(Person)` method will return true only if the person has a tag matching every filter tag.
+
+<puml src="diagrams/FilterCommandClass.puml" alt="FilterClassDiagram" />
+
+The following sequence diagram shows how a filter command goes through the `Logic` component.
+
+<puml src="diagrams/FilterSequenceDiagram-Logic.puml" alt="FilterSequenceDiagram" />
+
+<box type="info" seamless>
+
+**Note:** The lifeline for `FilterCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
+</box>
+
+### Clear command
+
+To safeguard against accidentally clearing the contact list, the clear command requires the user to input a confirmation after the initial clear command. This is performed with the use of the two flags in the `ModelManager` class, namely `isAwaitingClear` and `isConfirmClear`, where their statuses are checked within the execution of the clear command since the model is passed to the command.
+
+Another flag, `previouslyClear`, is used in the `LogicManager` class to check if the previous command was a clear command before handling the current command entered, where it checks if a confirmation "y" is entered.
+
+The following activity diagram summarizes what happens when a user executes a clear command:
+
+<puml src="diagrams/ClearCommandActivityDiagram.puml" alt="ClearCommandActivityDiagram" />
+
 ### \[Proposed\] Undo/redo feature
 
 #### Proposed Implementation
