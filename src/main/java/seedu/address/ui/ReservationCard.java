@@ -49,10 +49,13 @@ public class ReservationCard extends UiPart<Region> {
         pax.setText(reservation.getPax().value + " people");
 
         if(this.reservation.passedReservationTime()) {
-            ImageView statusIcon = new ImageView(new Image(getClass().getResourceAsStream("/images/tick_icon.png")));
-            statusIcon.setFitWidth(26); // Set width of the icon
-            statusIcon.setFitHeight(26); // Set height of the icon
-            cardPane.getChildren().add(statusIcon); // Add the icon to the cardPane
+            id.setStyle("-fx-font-style: italic; -fx-opacity: 0.5;");
+            name.setStyle("-fx-font-style: italic; -fx-opacity: 0.5;");
+            phone.setStyle("-fx-font-style: italic; -fx-opacity: 0.5;");
+            date.setStyle("-fx-font-style: italic; -fx-opacity: 0.5;");
+            time.setStyle("-fx-font-style: italic; -fx-opacity: 0.5;");
+            pax.setStyle("-fx-font-style: italic; -fx-opacity: 0.5;");
+            cardPane.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
         }
     }
 
