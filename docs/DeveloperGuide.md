@@ -223,6 +223,24 @@ The following activity diagram summarizes what happens when a user executes a cl
 
 <puml src="diagrams/ClearCommandActivityDiagram.puml" alt="ClearCommandActivityDiagram" />
 
+### Archive command
+
+The archive command essentially removes the person from the `UniquePersonList persons` and places the person into the `UniquePersonList archivedPersons` in the address book, hiding the person's contact from the main list.
+
+This command has its corresponding `Unarchive` command which conversely removes the person from the `archivedPersons` list and adds them into the `persons` list inside the address book.
+
+There is also the associated `Alist` command that displays all the contacts that have been added into the `archivedPersons` list. 
+
+Archiving in CulinaryContacts has also been implemented in a way that allows for all other commands to be performed on the archived list. This was achieved by modifying the `FilteredList<Person> filteredPersons` within the `ModelManager` class to dynamically contain either the archived persons or the normal persons. This is because many of the original commands already make use of the `filteredPersons` list to execute the commands on. For commands that do not use the `filteredPersons` list in their execution, the flag `isViewingArchivedList` within the `ModelManager` is used instead in order to check if the user is currently viewing the normal persons or the archived persons before performing the command on the corresponding list. 
+
+Below is a comprehensive list of all the commands that work on a person list, and how they work on an archived list:
+
+1. Adding a person: The contact will be immediately added into the `archivedPersons` list.
+2. Editing a person: The contact details of the person at the index specified inside the archived list will be edited.
+3. Finding persons by name: Only names inside the archived list matching the keyword(s) provided will be displayed in the list.
+4. Filtering persons by tag: Only contacts inside the archived list with tags matching all tags provided in the filter command will be displayed.
+5. Deleting a person: The contact inside the archived list at the index specified in the delete command will be deleted.
+
 ### \[Proposed\] Undo/redo feature
 
 #### Proposed Implementation
