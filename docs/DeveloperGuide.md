@@ -158,6 +158,44 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 
 This section describes some noteworthy details on how certain features are implemented.
 
+### Help Command
+
+The implementation help command is more related to Ui part of the code compared to other commands as it opens another window to show the command summary of all commands. It is facilitated by the `handlehelp` method in the `MainWindow` class.
+
+The following activity diagram shows how a user view the help window with `help` command. 
+
+<puml src="diagrams/HelpActivityDiagram.puml" alt="HelpActivityDiagram" />
+
+Given below is an example usage scenario of the help window.
+
+Step 1. The user launches the application. The user will see the main window of the address book.
+
+Step 2. The user executes `help` command to open the help window. The `MainWindow#executeCommand()` will call `MainWindow#isShowHelp()` to check if the command to be executed is `help` command. `help` command is detected and causes `Model#handleHelp()` to be called which opens the help window.
+
+Step 3. The user looks through the command summary table to find the information needed.
+
+Step 4. The user can copy the website address by clicking `CopyURL` button on the help window and navigate to the program website for more detailed information.
+
+<box type="info" seamless>
+
+**Note** The user can do this anytime as long as the help window is opened.
+
+</box>
+
+Step 5. The user can then click the `X` on top right corner or press`Q` on keyboard to close the help window and return to the main window.
+
+#### Design considerations:
+
+**Aspect: How help window is presented:**
+
+* **Alternative 1 (current choice):** The program website address and important informations on top of a command summary table.
+  * Pros: Useful and convenient summary for easy reference.
+  * Cons: May need to modify evrytime a new type of command is added.
+
+* **Alternative 2:** Only the program website address.
+  * Pros: Easy to implement and no change needed in the future.
+  * Cons: Not very useful and convenient as a quick reference.
+
 ### Filter command
 
 The filtering of contacts by tag is facilitated by `HasMatchingTagPredicate`. It implements the `Predicate<Person>` interface and overrides the `test(Person)` method, which is used to decide which `Person`s will be displayed after the filter command. The `test(Person)` method will return true only if the person has a tag matching every filter tag.
@@ -173,6 +211,15 @@ The following sequence diagram shows how a filter command goes through the `Logi
 **Note:** The lifeline for `FilterCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
 </box>
 
+### Clear command
+
+To safeguard against accidentally clearing the contact list, the clear command requires the user to input a confirmation after the initial clear command. This is performed with the use of the two flags in the `ModelManager` class, namely `isAwaitingClear` and `isConfirmClear`, where their statuses are checked within the execution of the clear command since the model is passed to the command.
+
+Another flag, `previouslyClear`, is used in the `LogicManager` class to check if the previous command was a clear command before handling the current command entered, where it checks if a confirmation "y" is entered.
+
+The following activity diagram summarizes what happens when a user executes a clear command:
+
+<puml src="diagrams/ClearCommandActivityDiagram.puml" alt="ClearCommandActivityDiagram" />
 
 ### \[Proposed\] Undo/redo feature
 
