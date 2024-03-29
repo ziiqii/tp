@@ -6,6 +6,8 @@ import java.time.format.DateTimeFormatter;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.address.model.reservation.Reservation;
@@ -45,6 +47,10 @@ public class ReservationCard extends UiPart<Region> {
         date.setText(this.formatDate(reservation.getDate().value));
         time.setText(this.formatTime(reservation.getTime().value));
         pax.setText(reservation.getPax().value + " people");
+
+        if(this.reservation.passedReservationTime()) {
+            cardPane.setStyle("-fx-background-color: red");
+        }
     }
 
     /**

@@ -43,6 +43,15 @@ public class RsvDate {
         }
     }
 
+    /**
+     * Checks whether this date had passed.
+     * @return
+     */
+    public boolean isBeforeCurrentDate() {
+        LocalDate today = LocalDate.now();
+        return this.value.isBefore(today);
+    }
+
     public LocalDate getValue() {
         return this.value;
     }

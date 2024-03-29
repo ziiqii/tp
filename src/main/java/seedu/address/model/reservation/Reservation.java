@@ -81,6 +81,17 @@ public class Reservation {
     }
 
     /**
+     * Checks whether the reservation time had passed.
+     */
+    public boolean passedReservationTime() {
+        if (date.isBeforeCurrentDate()) {
+            return true;
+        } else {
+            return time.isBeforeCurrentTime();
+        }
+    }
+
+    /**
      * Returns true if both reservations have the same fields.
      * This defines a stronger notion of equality between two reservations.
      */
