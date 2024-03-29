@@ -115,7 +115,7 @@ public class AddressBookTest {
         public ObservableList<Person> getArchivedPersonList() {
             return archivedPersons;
         }
-      
+
         @Override
         public ObservableList<Reservation> getReservationList() {
             return reservations;
