@@ -2,6 +2,7 @@ package seedu.address.model;
 
 import static java.util.Objects.requireNonNull;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
@@ -178,6 +179,13 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     public void removeReservation(Reservation key) {
         reservations.remove(key);
+    }
+
+    /**
+     * Sorts the reservations from earliest to latest.
+     */
+    public void sortReservation(Comparator<Reservation> comparator) {
+        reservations.sort(comparator);
     }
 
     //// util methods
