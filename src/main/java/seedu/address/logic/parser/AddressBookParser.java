@@ -22,6 +22,7 @@ import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.ListCommand;
 import seedu.address.logic.commands.RsvCommand;
 import seedu.address.logic.commands.RsvDelCommand;
+import seedu.address.logic.commands.RsvSortCommand;
 import seedu.address.logic.commands.UnarchiveCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
@@ -88,6 +89,9 @@ public class AddressBookParser {
 
         case RsvDelCommand.COMMAND_WORD:
             return new RsvDelCommandParser().parse(arguments);
+
+        case RsvSortCommand.COMMAND_WORD:
+            return new RsvSortCommand();
 
         case ExitCommand.COMMAND_WORD:
             return new ExitCommand();

@@ -1,5 +1,8 @@
 package seedu.address.model.reservation;
 
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
@@ -31,6 +34,16 @@ public class RsvTime {
         return test.matches(VALIDATION_REGEX);
     }
 
+    public boolean isBeforeCurrentTime() {
+        LocalTime currentTime = LocalTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HHmm");
+        LocalTime reservationTime = LocalTime.parse(this.value, formatter);
+        return reservationTime.isBefore(currentTime);
+    }
+
+    public int getTimeInInteger() {
+        return Integer.parseInt(this.value);
+    }
     @Override
     public String toString() {
         return this.value;
