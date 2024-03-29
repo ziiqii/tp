@@ -43,6 +43,26 @@ public class RsvDate {
         }
     }
 
+    /**
+     * Checks whether this date had passed.
+     */
+    public boolean isBeforeCurrentDate() {
+        LocalDate today = LocalDate.now();
+        return this.value.isBefore(today);
+    }
+
+    /**
+     * Checks whether this date is equals to the date today.
+     */
+    public boolean equalsCurrentDate() {
+        LocalDate today = LocalDate.now();
+        return this.value.isEqual(today);
+    }
+
+    public LocalDate getValue() {
+        return this.value;
+    }
+
     @Override
     public String toString() {
         return value.format(FORMATTER);
