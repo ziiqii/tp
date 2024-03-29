@@ -158,6 +158,12 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 
 This section describes some noteworthy details on how certain features are implemented.
 
+### Help Command
+
+The implementation help command is more related to Ui part of the code compared to other commands as it opens another window to show the command summary of all commands. It is facilitated by the `handlehelp` method in the `MainWindow` class.
+
+
+
 ### \[Proposed\] Undo/redo feature
 
 #### Proposed Implementation
