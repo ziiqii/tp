@@ -23,7 +23,8 @@ public class RsvSortCommand extends Command {
         requireNonNull(model);
 
         Comparator<Reservation> comparator = Comparator
-                .comparing(Reservation::getDateValue)
+                .comparing(Reservation::passedReservationTime)
+                .thenComparing(Reservation::getDateValue)
                 .thenComparing(Reservation::getTimeValue);
 
         model.sortReservation(comparator);
