@@ -8,6 +8,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.address.model.person.Person;
+import seedu.address.model.tag.Tag;
 
 /**
  * An UI component that displays information of a {@code Person}.
@@ -54,6 +55,30 @@ public class PersonCard extends UiPart<Region> {
         email.setText(person.getEmail().value);
         person.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))
-                .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+                .forEach(this::createTagLabel);
+    }
+
+    /**
+     * Creates orange Label for customer, blue Label for employee, green Label for supplier,
+     * and grey Label for everything else. The created Label is then added to the tag FlowPane.
+     *
+     * @param tag The tag object for which a label is to be created.
+     */
+    public void createTagLabel(Tag tag) {
+        Label tagLabel = new Label(tag.tagName);
+        switch (tag.tagName) {
+        case "customer":
+            tagLabel.setStyle("-fx-background-color: #F5B041;");
+            break;
+        case "employee":
+            tagLabel.setStyle("-fx-background-color: #5DADE2;");
+            break;
+        case "supplier":
+            tagLabel.setStyle("-fx-background-color: #52BE80;");
+            break;
+        default:
+            tagLabel.setStyle("-fx-background-color: #EAECEE;");
+        }
+        tags.getChildren().add(tagLabel);
     }
 }
