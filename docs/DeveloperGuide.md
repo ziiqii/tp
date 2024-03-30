@@ -192,7 +192,7 @@ Step 5. The user can then click the `X` on top right corner or press`Q` on keybo
 
 * **Alternative 1 (current choice):** The program website address and important informations on top of a command summary table.
   * Pros: Useful and convenient summary for easy reference.
-  * Cons: May need to modify evrytime a new type of command is added.
+  * Cons: May need to modify every time a new type of command is added.
 
 * **Alternative 2:** Only the program website address.
   * Pros: Easy to implement and no change needed in the future.
