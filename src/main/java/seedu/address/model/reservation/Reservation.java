@@ -86,7 +86,7 @@ public class Reservation {
     public boolean passedReservationTime() {
         if (date.isBeforeCurrentDate()) {
             return true;
-        } else if (date.equalsCurrentDate()){
+        } else if (date.equalsCurrentDate()) {
             return time.isBeforeCurrentTime();
         } else {
             return false;

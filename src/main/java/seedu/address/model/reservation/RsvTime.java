@@ -1,10 +1,10 @@
 package seedu.address.model.reservation;
 
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
+
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Represents a Reservation's reservation time in the address book.
@@ -34,6 +34,12 @@ public class RsvTime {
         return test.matches(VALIDATION_REGEX);
     }
 
+    /**
+     * Checks if the reservation time represented by this instance is before the current time.
+     *
+     * @return {@code true} if the reservation time is before the current system time,
+     *         {@code false} otherwise.
+     */
     public boolean isBeforeCurrentTime() {
         LocalTime currentTime = LocalTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HHmm");

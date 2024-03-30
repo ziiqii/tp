@@ -48,15 +48,15 @@ public class ReservationCard extends UiPart<Region> {
         time.setText(this.formatTime(reservation.getTime().value));
         pax.setText(reservation.getPax().value + " people");
 
-        if(this.reservation.passedReservationTime()) {
+        if (this.reservation.passedReservationTime()) {
             ImageView statusIcon = new ImageView(new Image(getClass().getResourceAsStream("/images/text18-9.png")));
-            cardPane.getChildren().add(statusIcon); 
+            cardPane.getChildren().add(statusIcon);
             id.setStyle("-fx-opacity: 0.5;");
             name.setStyle("-fx-opacity: 0.5;");
             phone.setStyle("-fx-opacity: 0.5;");
             date.setStyle("-fx-opacity: 0.5;");
             time.setStyle("-fx-opacity: 0.5;");
-            pax.setStyle("-fx-opacity: 0.5;");      
+            pax.setStyle("-fx-opacity: 0.5;");
         }
     }
 
