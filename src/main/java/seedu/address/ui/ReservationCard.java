@@ -50,9 +50,13 @@ public class ReservationCard extends UiPart<Region> {
 
         if(this.reservation.passedReservationTime()) {
             ImageView statusIcon = new ImageView(new Image(getClass().getResourceAsStream("/images/text18-9.png")));
-            //statusIcon.setFitWidth(26); // Set width of the icon
-            //statusIcon.setFitHeight(26); // Set height of the icon
-            cardPane.getChildren().add(statusIcon); // Add the icon to the cardPane
+            cardPane.getChildren().add(statusIcon); 
+            id.setStyle("-fx-opacity: 0.5;");
+            name.setStyle("-fx-opacity: 0.5;");
+            phone.setStyle("-fx-opacity: 0.5;");
+            date.setStyle("-fx-opacity: 0.5;");
+            time.setStyle("-fx-opacity: 0.5;");
+            pax.setStyle("-fx-opacity: 0.5;");      
         }
     }
 

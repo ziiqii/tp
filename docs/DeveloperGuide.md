@@ -123,8 +123,10 @@ How the parsing works:
 
 The `Model` component,
 
-* stores the address book data i.e., all `Person` objects (which are contained in a `UniquePersonList` object).
+* stores the address book data i.e., all `Person` and `Reservation` objects (which are contained in the
+  `UniquePersonList` and `UniqueReservationList` objects respectively.
 * stores the currently 'selected' `Person` objects (e.g., results of a search query) as a separate _filtered_ list which is exposed to outsiders as an unmodifiable `ObservableList<Person>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
+* stores the currently 'selected' `Reservation` objects in the same fashion as 'selected' `Person` objects.
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
 
@@ -157,6 +159,87 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 ## **Implementation**
 
 This section describes some noteworthy details on how certain features are implemented.
+
+### Help Command
+
+The implementation help command is more related to Ui part of the code compared to other commands as it opens another window to show the command summary of all commands. It is facilitated by the `handlehelp` method in the `MainWindow` class.
+
+The following activity diagram shows how a user view the help window with `help` command. 
+
+<puml src="diagrams/HelpActivityDiagram.puml" alt="HelpActivityDiagram" />
+
+Given below is an example usage scenario of the help window.
+
+Step 1. The user launches the application. The user will see the main window of the address book.
+
+Step 2. The user executes `help` command to open the help window. The `MainWindow#executeCommand()` will call `MainWindow#isShowHelp()` to check if the command to be executed is `help` command. `help` command is detected and causes `Model#handleHelp()` to be called which opens the help window.
+
+Step 3. The user looks through the command summary table to find the information needed.
+
+Step 4. The user can copy the website address by clicking `CopyURL` button on the help window and navigate to the program website for more detailed information.
+
+<box type="info" seamless>
+
+**Note** The user can do this anytime as long as the help window is opened.
+
+</box>
+
+Step 5. The user can then click the `X` on top right corner or press`Q` on keyboard to close the help window and return to the main window.
+
+#### Design considerations:
+
+**Aspect: How help window is presented:**
+
+* **Alternative 1 (current choice):** The program website address and important informations on top of a command summary table.
+  * Pros: Useful and convenient summary for easy reference.
+  * Cons: May need to modify every time a new type of command is added.
+
+* **Alternative 2:** Only the program website address.
+  * Pros: Easy to implement and no change needed in the future.
+  * Cons: Not very useful and convenient as a quick reference.
+
+### Filter command
+
+The filtering of contacts by tag is facilitated by `HasMatchingTagPredicate`. It implements the `Predicate<Person>` interface and overrides the `test(Person)` method, which is used to decide which `Person`s will be displayed after the filter command. The `test(Person)` method will return true only if the person has a tag matching every filter tag.
+
+<puml src="diagrams/FilterCommandClass.puml" alt="FilterClassDiagram" />
+
+The following sequence diagram shows how a filter command goes through the `Logic` component.
+
+<puml src="diagrams/FilterSequenceDiagram-Logic.puml" alt="FilterSequenceDiagram" />
+
+<box type="info" seamless>
+
+**Note:** The lifeline for `FilterCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
+</box>
+
+### Clear command
+
+To safeguard against accidentally clearing the contact list, the clear command requires the user to input a confirmation after the initial clear command. This is performed with the use of the two flags in the `ModelManager` class, namely `isAwaitingClear` and `isConfirmClear`, where their statuses are checked within the execution of the clear command since the model is passed to the command.
+
+Another flag, `previouslyClear`, is used in the `LogicManager` class to check if the previous command was a clear command before handling the current command entered, where it checks if a confirmation "y" is entered.
+
+The following activity diagram summarizes what happens when a user executes a clear command:
+
+<puml src="diagrams/ClearCommandActivityDiagram.puml" alt="ClearCommandActivityDiagram" />
+
+### Archive command
+
+The archive command essentially removes the person from the `UniquePersonList persons` and places the person into the `UniquePersonList archivedPersons` in the address book, hiding the person's contact from the main list.
+
+This command has its corresponding `Unarchive` command which conversely removes the person from the `archivedPersons` list and adds them into the `persons` list inside the address book.
+
+There is also the associated `Alist` command that displays all the contacts that have been added into the `archivedPersons` list. 
+
+Archiving in CulinaryContacts has also been implemented in a way that allows for all other commands to be performed on the archived list. This was achieved by modifying the `FilteredList<Person> filteredPersons` within the `ModelManager` class to dynamically contain either the archived persons or the normal persons. This is because many of the original commands already make use of the `filteredPersons` list to execute the commands on. For commands that do not use the `filteredPersons` list in their execution, the flag `isViewingArchivedList` within the `ModelManager` is used instead in order to check if the user is currently viewing the normal persons or the archived persons before performing the command on the corresponding list. 
+
+Below is a comprehensive list of all the commands that work on a person list, and how they work on an archived list:
+
+1. Adding a person: The contact will be immediately added into the `archivedPersons` list.
+2. Editing a person: The contact details of the person at the index specified inside the archived list will be edited.
+3. Finding persons by name: Only names inside the archived list matching the keyword(s) provided will be displayed in the list.
+4. Filtering persons by tag: Only contacts inside the archived list with tags matching all tags provided in the filter command will be displayed.
+5. Deleting a person: The contact inside the archived list at the index specified in the delete command will be deleted.
 
 ### \[Proposed\] Undo/redo feature
 
