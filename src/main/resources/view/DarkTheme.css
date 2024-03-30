@@ -149,6 +149,10 @@
     -fx-text-fill: black !important;
 }
 
+.result-display .viewport {
+    -fx-background-color: transparent;
+}
+
 .status-bar .label {
     -fx-font-family: "Segoe UI Light";
     -fx-text-fill: white;
@@ -372,6 +376,7 @@
     -fx-text-fill: white;
     -fx-opacity: 0.5;
 }
+
 
 
 
