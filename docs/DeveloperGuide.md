@@ -164,7 +164,7 @@ This section describes some noteworthy details on how certain features are imple
 
 The implementation help command is more related to Ui part of the code compared to other commands as it opens another window to show the command summary of all commands. It is facilitated by the `handlehelp` method in the `MainWindow` class.
 
-The following activity diagram shows how a user view the help window with `help` command. 
+The following activity diagram shows how a user view the help window with `help` command.
 
 <puml src="diagrams/HelpActivityDiagram.puml" alt="HelpActivityDiagram" />
 
@@ -229,9 +229,9 @@ The archive command essentially removes the person from the `UniquePersonList pe
 
 This command has its corresponding `Unarchive` command which conversely removes the person from the `archivedPersons` list and adds them into the `persons` list inside the address book.
 
-There is also the associated `Alist` command that displays all the contacts that have been added into the `archivedPersons` list. 
+There is also the associated `Alist` command that displays all the contacts that have been added into the `archivedPersons` list.
 
-Archiving in CulinaryContacts has also been implemented in a way that allows for all other commands to be performed on the archived list. This was achieved by modifying the `FilteredList<Person> filteredPersons` within the `ModelManager` class to dynamically contain either the archived persons or the normal persons. This is because many of the original commands already make use of the `filteredPersons` list to execute the commands on. For commands that do not use the `filteredPersons` list in their execution, the flag `isViewingArchivedList` within the `ModelManager` is used instead in order to check if the user is currently viewing the normal persons or the archived persons before performing the command on the corresponding list. 
+Archiving in CulinaryContacts has also been implemented in a way that allows for all other commands to be performed on the archived list. This was achieved by modifying the `FilteredList<Person> filteredPersons` within the `ModelManager` class to dynamically contain either the archived persons or the normal persons. This is because many of the original commands already make use of the `filteredPersons` list to execute the commands on. For commands that do not use the `filteredPersons` list in their execution, the flag `isViewingArchivedList` within the `ModelManager` is used instead in order to check if the user is currently viewing the normal persons or the archived persons before performing the command on the corresponding list.
 
 Below is a comprehensive list of all the commands that work on a person list, and how they work on an archived list:
 
@@ -407,8 +407,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Use cases
 
-(For all use cases below, the **System** is `CulinaryContacts` and the **Actor** is the `user`, unless 
-specified otherwise)
+(For all use cases below, the **System** is `CulinaryContacts` and the **Actor** is the `user`, unless specified otherwise)
 
 **Use case: UC01 - View help**
 
@@ -436,7 +435,7 @@ specified otherwise)
 
       Use case resumes from step 1.
 
-* 1b. Compulsory field(s) is/are missing. 
+* 1b. Compulsory field(s) is/are missing.
 
     * 1b1. CulinaryContacts shows an error message.
 
