@@ -49,9 +49,9 @@ public class ReservationCard extends UiPart<Region> {
         pax.setText(reservation.getPax().value + " people");
 
         if(this.reservation.passedReservationTime()) {
-            ImageView statusIcon = new ImageView(new Image(getClass().getResourceAsStream("/images/tick_icon.png")));
-            statusIcon.setFitWidth(26); // Set width of the icon
-            statusIcon.setFitHeight(26); // Set height of the icon
+            ImageView statusIcon = new ImageView(new Image(getClass().getResourceAsStream("/images/text18-9.png")));
+            //statusIcon.setFitWidth(26); // Set width of the icon
+            //statusIcon.setFitHeight(26); // Set height of the icon
             cardPane.getChildren().add(statusIcon); // Add the icon to the cardPane
         }
     }
