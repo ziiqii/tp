@@ -54,7 +54,7 @@
               <Insets top="10" right="10" bottom="10" left="10" />
             </padding>
             <HBox>
-              <Label fx:id ="activeListLabel" text="Contact" styleClass="currentListLabel"/>
+              <Label fx:id ="activeListLabel" text="Contacts" styleClass="currentListLabel"/>
               <Label fx:id ="archivedListLabel" text="Archived" styleClass="hiddenListLabel"/>
             </HBox>
             <StackPane fx:id="personListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
