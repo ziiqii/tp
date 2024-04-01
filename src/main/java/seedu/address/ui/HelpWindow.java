@@ -141,6 +141,20 @@ public class HelpWindow extends UiPart<Stage> {
     private void fillCommandSummaryTable() {
         guideItems.add(new UserGuideItem("help", "Open command summary "
                 + "(can also be accessed by pressing F1 key)"));
+        fillMainCommandSummary();
+        fillArchiveRelatedCommandSummary();
+        fillReservationRelatedCommandSummary();
+        guideItems.add(new UserGuideItem("clear", "Clear all contacts.\n"
+                + "A confirmation message will be shown, type y to proceed with clearing "
+                + "or otherwise to cancel clearing."));
+        guideItems.add(new UserGuideItem("exit", "Close the address book."));
+    }
+
+    /**
+     * Fills the command summary table with main commands.
+     * These include 'add', 'list', 'edit', 'find', 'filter', 'delete' commands.
+     */
+    private void fillMainCommandSummary() {
         guideItems.add(new UserGuideItem("add", "Add a new contact.\n"
                 + "add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…\n"
                 + "e.g., add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/supplier "
@@ -159,10 +173,28 @@ public class HelpWindow extends UiPart<Stage> {
         guideItems.add(new UserGuideItem("delete", "Delete a contact.\n"
                 + "delete INDEX\n"
                 + "e.g., delete 1"));
-        guideItems.add(new UserGuideItem("clear", "Clear all contacts.\n"
-                + "A confirmation message will be shown, type y to proceed with clearing "
-                + "or otherwise to cancel clearing."));
-        guideItems.add(new UserGuideItem("exit", "Close the address book."));
+    }
+
+    private void fillArchiveRelatedCommandSummary() {
+        guideItems.add(new UserGuideItem("archive", "Archive a contact.\n"
+                + "archive INDEX\n"
+                + "e.g., archive 1"));
+        guideItems.add(new UserGuideItem("unarchive", "Unarchive a contact.\n"
+                + "unarchive INDEX\n"
+                + "e.g., unarchive 1"));
+        guideItems.add(new UserGuideItem("alist", "View the archive  list.\n"));
+    }
+
+    public void fillReservationRelatedCommandSummary() {
+        guideItems.add(new UserGuideItem("rsv", "Make a reservation based on the name of the contact"
+                + "with the specified index.\n"
+                + "rsv INDEX d/DATE t/TIME p/PAX\n"
+                + "e.g., rsv 1 d/2024-04-17 t/1800 p/8"));
+        guideItems.add(new UserGuideItem("rsvdel", "Delete a reservation.\n"
+                + "rsvdel INDEX\n"
+                + "e.g., rsvdel 1"));
+        guideItems.add(new UserGuideItem("rsvlist", "List all reservations.\n"));
+        guideItems.add(new UserGuideItem("rsvsort", "Sort the reservation list.\n"));
     }
 
     /**
