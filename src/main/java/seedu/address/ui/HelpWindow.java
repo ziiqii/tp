@@ -201,7 +201,6 @@ public class HelpWindow extends UiPart<Stage> {
         guideItems.add(new CommandSummary("rsvdel", "Delete a reservation.\n"
                 + "rsvdel INDEX\n"
                 + "e.g., rsvdel 1"));
-        guideItems.add(new CommandSummary("rsvlist", "List all reservations.\n"));
         guideItems.add(new CommandSummary("rsvsort", "Sort the reservation list.\n"));
     }
 
