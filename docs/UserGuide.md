@@ -9,7 +9,9 @@ pageNav: 3
 CulinaryContacts is a **desktop app for managing contacts, optimized for use via a  Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, CulinaryContacts can get your contact management tasks done faster than traditional GUI apps.
 
 <!-- * Table of Contents -->
-* [Quickstart](#quick-start)
+* [Quickstart](#quickstart)
+* [Navigating the User Guide](#navigating-the-user-guide)
+* [Interpreting the GUI](#interpreting-the-gui)
 * [Features](#features)
     * [Viewing help:`help`](#viewing-help-help)
     * [Adding a person: `add`](#adding-a-person-add)
@@ -24,11 +26,11 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
     * [Editing the data file](#editing-the-data-file)
     * [Archiving datafiles `[coming in v2.0]`](#archiving-data-files-coming-in-v2-0)
 * [FAQ](#faq)
-* [Known issues](#known-issues)
-* [Command summary](#command-summary)
+* [Known Issues](#known-issues)
+* [Command Summary](#command-summary)
 --------------------------------------------------------------------------------------------------------------------
 
-## Quick start
+## Quickstart
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
@@ -57,6 +59,20 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 
 --------------------------------------------------------------------------------------------------------------------
 
+## Navigating the User Guide
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Interpreting the GUI
+
+### Main window
+
+### Contact Card
+
+### Reservation Card
+
+--------------------------------------------------------------------------------------------------------------------
+
 ## Features
 
 <box type="info" seamless>
@@ -81,7 +97,7 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </box>
 
-### Viewing help : `help`
+### Viewing help: `help`
 
 Shows the full command summary of CulinaryContacts at a glance.
 Press 'q' to close the help window.
@@ -104,22 +120,22 @@ Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
 </box>
 
 Examples:
-* `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
-* `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
+* `add n/Alex Yeoh p/87438807 e/alexyeoh@example.com a/Blk 30 Geylang Street 29, #01-40 t/supplier t/durian`
+* `add n/David Lee p/91031282 e/david@example.com a/Blk 436 Serangoon Gardens Street 26, #02-43 t/customer`
 
-### Listing all persons : `list`
+### Listing all persons: `list`
 
-Shows a list of all persons in CulinaryContacts.
+Shows a list of all persons in the contacts list of CulinaryContacts.
 
 Format: `list`
 
-### Editing a person : `edit`
+### Editing a person: `edit`
 
 Edits an existing person in CulinaryContacts.
 
 Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
 
-* Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
+* Edits the person at the specified `INDEX`. The index refers to the index number shown in the _displayed person list_. The index **must be a positive integer** 1, 2, 3, …​
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
 * When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
@@ -128,11 +144,11 @@ Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
 
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
-*  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
+*  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and removes all existing tags.
 
 ### Finding persons by name: `find`
 
-Finds persons whose names contain any of the given keywords.
+Finds persons whose names contain any of the given keywords in the _displayed person list_.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
@@ -150,7 +166,7 @@ Examples:
 
 ### Filtering persons by tag: `filter`
 
-Finds persons that are tagged with all of the given tags.
+Finds persons that are tagged with all the given tags in the _displayed person list_.
 
 Format: `filter TAG [MORE_TAGS]`
 
@@ -159,20 +175,24 @@ Format: `filter TAG [MORE_TAGS]`
 * Persons matching all tags will be returned (i.e. `AND` search).
   e.g. `seafood supplier` will return persons with both `seafood` and `supplier` tag.
 
+Examples:
+* `filter supplier` returns persons with the `supplier` tag.
+* `filter supplier seafood` returns persons with both `supplier` and `seafood` tags.
 
-### Deleting a person : `delete`
+### Deleting a person: `delete`
 
 Deletes the specified person from CulinaryContacts.
 
 Format: `delete INDEX`
 
 * Deletes the person at the specified `INDEX`.
-* The index refers to the index number shown in the displayed person list.
+* The index refers to the index number shown in the _displayed person list_.
 * The index **must be a positive integer** 1, 2, 3, …​
 
 Examples:
-* `list` followed by `delete 2` deletes the 2nd person in CulinaryContacts.
-* `find Betsy` followed by `delete 1` deletes the 1st person in the results of the `find` command.
+* `list` followed by `delete 2` deletes the 2nd person in the contacts list of CulinaryContacts.
+
+### Clearing all entries: `clear`
 
 ### Archive
 
@@ -208,18 +228,16 @@ Shows a list of all persons in the archived list of CulinaryContacts.
 
 Format: `alist`
 
-### Clearing all entries : `clear`
-
-Clears all entries from CulinaryContacts.
+Remove all persons and reservations from CulinaryContacts.
 
 Format: `clear`
 
-* A pop-up confirmation message will appear, where the user must confirm their choice `Are you sure you want to clear ALL contacts? [y/n]`.<br>
+* A pop-up confirmation message will appear, where the user must confirm their choice.<br>
   ![result for 'clear'](images/clearConfirmationMessage.png)
   * If user types `y`, all contacts will be cleared and a success message will be shown: `CulinaryContacts has been cleared!`.
   * If user types `n` or anything else, the clear command will be cancelled and a message will be shown: `Clear cancelled!`.
 
-### Exiting the program : `exit`
+### Exiting the program: `exit`
 
 Exits the program.
 
@@ -276,9 +294,6 @@ Format: `rsvsort`
 * Upcoming reservations are sorted from earliest to latest.
 * Expired reservations are also sorted from earliest to latest.
 
-
---------------------------------------------------------------------------------------------------------------------
-
 ## FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
@@ -286,20 +301,28 @@ Format: `rsvsort`
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Known issues
+## Known Issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Command summary
+## Command Summary
 
-Action     | Format, Examples
------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Add**    | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
-**Clear**  | `clear`
-**Delete** | `delete INDEX`<br> e.g., `delete 3`
-**Edit**   | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
-**Find**   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`
-**List**   | `list`
-**Help**   | `help`
+| Command       | Format, Examples                                                                                                                                                             |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **help**      | `help`                                                                                                                                                                       |
+| **add**       | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`<br> e.g., `add n/Alex Yeoh p/87438807 e/alexyeoh@example.com a/Blk 30 Geylang Street 29, #01-40 t/supplier t/durian` |
+| **list**      | `list`                                                                                                                                                                       |
+| **edit**      | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                  |
+| **find**      | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                   |
+| **filter**    | `filter TAG [MORE_TAGS]`<br> e.g., `filter supplier seafood`                                                                                                                 |
+| **delete**    | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                          |
+| **archive**   | `archive INDEX`<br> e.g., `archive 2`                                                                                                                                        |
+| **alist**     | `alist`                                                                                                                                                                      |
+| **unarchive** | `unarchive INDEX`<br> e.g., `unarchive 2`                                                                                                                                    |
+| **rsv**       | `rsv INDEX d/DATE t/TIME p/PAX`<br> e.g., `rsv 1 d/2024-04-15 t/1800 p/4`                                                                                                    |
+| **rsvdel**    | `rsvdel INDEX`<br> e.g., `rsvdel 1`                                                                                                                                          |
+| **rsvsort**   | `rsvsort`                                                                                                                                                                    |
+| **clear**     | `clear`                                                                                                                                                                      |
+
