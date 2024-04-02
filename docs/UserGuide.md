@@ -205,9 +205,43 @@ If your changes to the data file makes its format invalid, CulinaryContacts will
 Furthermore, certain edits can cause the CulinaryContacts to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </box>
 
-### Archiving data files `[coming in v2.0]`
+### Reservations
 
-_Details coming soon ..._
+#### Adding a reservation: `rsv`
+
+Adds a reservation to CulinaryContacts.
+
+Format: `rsv INDEX d/DATE t/TIME p/PAX`
+* Adds a reservation for the person at the specified `INDEX`. The index refers to the index number shown in the _displayed person list_.
+* The index **must be a positive integer** 1, 2, 3, …​
+* `DATE` **must be in yyyy-MM-dd** format.
+* `TIME` **must be in HHmm** format.
+* `PAX` **must be a positive integer**.
+
+Example:
+* `rsv 1 d/2024-04-17 t/1800 p/8`
+
+#### Deleting a reservation: `rsvdel`
+
+Deletes the specified reservation from CulinaryContacts.
+
+Format: `rsvdel INDEX`
+* Deletes the reservation at the specified `INDEX`.
+* The index refers to the index number shown in the _displayed reservation list_.
+* The index **must be a positive integer** 1, 2, 3, …​
+
+Example:
+* `rsvdel 2` deletes the 2nd reservation in CulinaryContacts.
+
+#### Sorting reservations: `rsvsort`
+
+Shows a sorted list of all reservations in CulinaryContacts.
+
+Format: `rsvsort`
+* Upcoming reservations are always on top of expired reservations.
+* Upcoming reservations are sorted from earliest to latest.
+* Expired reservations are also sorted from earliest to latest.
+
 
 --------------------------------------------------------------------------------------------------------------------
 
