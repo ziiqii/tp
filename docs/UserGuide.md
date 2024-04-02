@@ -174,6 +174,40 @@ Examples:
 * `list` followed by `delete 2` deletes the 2nd person in CulinaryContacts.
 * `find Betsy` followed by `delete 1` deletes the 1st person in the results of the `find` command.
 
+### Archive
+
+#### Archiving a person: `archive`
+Removes the specified person from the contacts list and adds the person into the archived list.
+
+Format: `archive INDEX`
+
+* Archives the person at the specified INDEX.
+* The index refers to the index number shown in the _displayed person list_. 
+* The index must be a positive integer 1, 2, 3, ...
+* This command can only be performed while viewing the contacts list. Type `list` to view the contacts list.
+
+Examples:
+* `list` followed by `archive 1` archives the 1st person in the contacts list of CulinaryContacts.
+
+#### Unarchiving a person: `unarchive`
+Removes the specified person from the archived list and adds the person back into the contact list.
+
+Format: `unarchive INDEX`
+
+* Unarchives the person at the specified INDEX
+* The index refers to the index number shown in the _displayed person list_.
+* The index must be a positive integer 1, 2, 3, ...
+* This command can only be performed while viewing the archived list. Type `alist` to view the archived list.
+
+Examples:
+* `alist` followed by `unarchive 1` unarchives the first person in the archived list of CulinaryContacts.
+
+#### Listing all archived persons: `alist`
+
+Shows a list of all persons in the archived list of CulinaryContacts.
+
+Format: `alist`
+
 ### Clearing all entries : `clear`
 
 Clears all entries from CulinaryContacts.
