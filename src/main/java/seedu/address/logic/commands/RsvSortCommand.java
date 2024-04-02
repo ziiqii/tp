@@ -3,11 +3,10 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_RESERVATIONS;
 
+import java.util.Comparator;
+
 import seedu.address.model.Model;
 import seedu.address.model.reservation.Reservation;
-
-import java.util.Comparator;
-import java.util.List;
 
 /**
  * Sorts all reservations from earliest to latest.

@@ -28,7 +28,7 @@ email address: `e0957889@u.nus.edu`<br>
 <img src="images/ziiqii.png" width="200px">
 
 email address: `e0957458@u.nus.edu`<br>
-[[github](https://github.com/ziiqii)] 
+[[github](https://github.com/ziiqii)]
 
 
 ### Wong Xu Cheng
