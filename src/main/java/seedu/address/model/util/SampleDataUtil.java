@@ -38,14 +38,14 @@ public class SampleDataUtil {
             new Person(new Name("Bernice Yu"), new Phone("99272758"), new Email("berniceyu@example.com"),
                 new Address("Blk 30 Lorong 3 Serangoon Gardens, #08-18"),
                 getTagSet("parttime", "waiter", "employee")),
-                CUSTOMER_DAVID,
+            CUSTOMER_DAVID,
             new Person(new Name("Roy Balakrishnan"), new Phone("92624417"), new Email("royb@example.com"),
                     new Address("Blk 45 Aljunied Street 85, #01-31"),
                     getTagSet("supplier", "durian")),
             new Person(new Name("Irfan Ibrahim"), new Phone("92492021"), new Email("irfan@example.com"),
                     new Address("Blk 47 Tampines Street 20, #01-35"),
                     getTagSet("supplier", "mango")),
-                CUSTOMER_CHARLOTTE
+            CUSTOMER_CHARLOTTE
         };
     }
 
