@@ -214,8 +214,8 @@ Adds a reservation to CulinaryContacts.
 Format: `rsv INDEX d/DATE t/TIME p/PAX`
 * Adds a reservation for the person at the specified `INDEX`. The index refers to the index number shown in the _displayed person list_.
 * The index **must be a positive integer** 1, 2, 3, …​
-* `DATE` must be in **yyyy-MM-dd** format.
-* `TIME` must be in **HHmm** format.
+* `DATE` **must be in yyyy-MM-dd** format.
+* `TIME` **must be in HHmm** format.
 * `PAX` **must be a positive integer**.
 
 Example:
