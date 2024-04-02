@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 import seedu.address.commons.core.LogsCenter;
 
 /**
- * Controller for a help page
+ * Controller for a help page.
  */
 public class HelpWindow extends UiPart<Stage> {
 
@@ -41,15 +41,15 @@ public class HelpWindow extends UiPart<Stage> {
     private Label helpMessage;
 
     @FXML
-    private TableView<UserGuideItem> userGuideTable;
+    private TableView<CommandSummary> userGuideTable;
 
     @FXML
-    private TableColumn<UserGuideItem, String> commandColumn;
+    private TableColumn<CommandSummary, String> commandColumn;
 
     @FXML
-    private TableColumn<UserGuideItem, String> usageColumn;
+    private TableColumn<CommandSummary, String> usageColumn;
 
-    private final ObservableList<UserGuideItem> guideItems = FXCollections.observableArrayList();
+    private final ObservableList<CommandSummary> guideItems = FXCollections.observableArrayList();
 
 
     /**
@@ -139,30 +139,70 @@ public class HelpWindow extends UiPart<Stage> {
      * Fills the command summary table with all available commands.
      */
     private void fillCommandSummaryTable() {
-        guideItems.add(new UserGuideItem("help", "Open command summary "
+        guideItems.add(new CommandSummary("help", "Open command summary "
                 + "(can also be accessed by pressing F1 key)"));
-        guideItems.add(new UserGuideItem("add", "Add a new contact.\n"
+        fillMainCommandSummary();
+        fillArchiveRelatedCommandSummary();
+        fillReservationRelatedCommandSummary();
+        guideItems.add(new CommandSummary("clear", "Remove all persons and reservations "
+                + "from CulinaryContacts.\n"
+                + "A confirmation message will be shown, type y to proceed with clearing "
+                + "or otherwise to cancel clearing."));
+        guideItems.add(new CommandSummary("exit", "Close the address book."));
+    }
+
+    /**
+     * Fills the command summary table with main commands.
+     * These include 'add', 'list', 'edit', 'find', 'filter', 'delete' commands.
+     */
+    private void fillMainCommandSummary() {
+        guideItems.add(new CommandSummary("add", "Add a new contact.\n"
                 + "add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…\n"
                 + "e.g., add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/supplier "
                 + "t/seafood"));
-        guideItems.add(new UserGuideItem("list", "List all contacts.\n"));
-        guideItems.add(new UserGuideItem("edit", "Edit a contact.\n"
+        guideItems.add(new CommandSummary("list", "List all contacts.\n"));
+        guideItems.add(new CommandSummary("edit", "Edit a contact.\n"
                 + "edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…\n"
                 + "e.g., edit 1 p/91234567 e/johndoe@example.com"));
-        guideItems.add(new UserGuideItem("find", "Find contacts whose names contain "
+        guideItems.add(new CommandSummary("find", "Find contacts whose names contain "
                 + "any of the given keywords.\n"
                 + "find KEYWORD [MORE_KEYWORDS]\n"
                 + "e.g., find John"));
-        guideItems.add(new UserGuideItem("filter", "Filter contacts with specified tags.\n"
+        guideItems.add(new CommandSummary("filter", "Filter contacts with specified tags.\n"
                 + "filter TAG [MORE_TAGS]\n"
                 + "e.g., filter supplier seafood"));
-        guideItems.add(new UserGuideItem("delete", "Delete a contact.\n"
+        guideItems.add(new CommandSummary("delete", "Delete a contact.\n"
                 + "delete INDEX\n"
                 + "e.g., delete 1"));
-        guideItems.add(new UserGuideItem("clear", "Clear all contacts.\n"
-                + "A confirmation message will be shown, type y to proceed with clearing "
-                + "or otherwise to cancel clearing."));
-        guideItems.add(new UserGuideItem("exit", "Close the address book."));
+    }
+
+    /**
+     * Fills the command summary table with archive-related commands.
+     * These include 'archive', 'unarchive', 'alist'.
+     */
+    private void fillArchiveRelatedCommandSummary() {
+        guideItems.add(new CommandSummary("archive", "Archive a contact.\n"
+                + "archive INDEX\n"
+                + "e.g., archive 1"));
+        guideItems.add(new CommandSummary("unarchive", "Unarchive a contact.\n"
+                + "unarchive INDEX\n"
+                + "e.g., unarchive 1"));
+        guideItems.add(new CommandSummary("alist", "View the archived list.\n"));
+    }
+
+    /**
+     * Fills the command summary table with reservation-related commands.
+     * These include 'rsv', 'rsvdel', 'rsvlist', 'rsvsort'.
+     */
+    public void fillReservationRelatedCommandSummary() {
+        guideItems.add(new CommandSummary("rsv", "Add a reservation for the person "
+                + "at the specified index"
+                + "rsv INDEX d/DATE t/TIME p/PAX\n"
+                + "e.g., rsv 1 d/2024-04-17 t/1800 p/8"));
+        guideItems.add(new CommandSummary("rsvdel", "Delete a reservation.\n"
+                + "rsvdel INDEX\n"
+                + "e.g., rsvdel 1"));
+        guideItems.add(new CommandSummary("rsvsort", "Sort the reservation list.\n"));
     }
 
     /**
