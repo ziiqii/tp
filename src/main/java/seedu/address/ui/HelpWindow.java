@@ -144,7 +144,8 @@ public class HelpWindow extends UiPart<Stage> {
         fillMainCommandSummary();
         fillArchiveRelatedCommandSummary();
         fillReservationRelatedCommandSummary();
-        guideItems.add(new CommandSummary("clear", "Clear all contacts.\n"
+        guideItems.add(new CommandSummary("clear", "Remove all persons and reservations "
+                + "from CulinaryContacts.\n"
                 + "A confirmation message will be shown, type y to proceed with clearing "
                 + "or otherwise to cancel clearing."));
         guideItems.add(new CommandSummary("exit", "Close the address book."));
@@ -186,7 +187,7 @@ public class HelpWindow extends UiPart<Stage> {
         guideItems.add(new CommandSummary("unarchive", "Unarchive a contact.\n"
                 + "unarchive INDEX\n"
                 + "e.g., unarchive 1"));
-        guideItems.add(new CommandSummary("alist", "View the archive  list.\n"));
+        guideItems.add(new CommandSummary("alist", "View the archived list.\n"));
     }
 
     /**
@@ -194,8 +195,8 @@ public class HelpWindow extends UiPart<Stage> {
      * These include 'rsv', 'rsvdel', 'rsvlist', 'rsvsort'.
      */
     public void fillReservationRelatedCommandSummary() {
-        guideItems.add(new CommandSummary("rsv", "Make a reservation based on the name of the contact"
-                + "with the specified index.\n"
+        guideItems.add(new CommandSummary("rsv", "Add a reservation for the person "
+                + "at the specified index"
                 + "rsv INDEX d/DATE t/TIME p/PAX\n"
                 + "e.g., rsv 1 d/2024-04-17 t/1800 p/8"));
         guideItems.add(new CommandSummary("rsvdel", "Delete a reservation.\n"
