@@ -11,8 +11,9 @@ import seedu.address.model.Model;
 public class ClearCommand extends Command {
 
     public static final String COMMAND_WORD = "clear";
-    public static final String MESSAGE_CONFIRMATION = "Are you sure you want to clear ALL contacts? [y/n]";
-    public static final String MESSAGE_SUCCESS = "Address book has been cleared!";
+    public static final String MESSAGE_CONFIRMATION = "Are you sure you want to remove ALL persons and reservations "
+            + "from CulinaryContacts? [y/n]";
+    public static final String MESSAGE_SUCCESS = "Clear successful!";
     public static final String MESSAGE_CANCELLED = "Clear cancelled!";
 
     @Override
