@@ -181,9 +181,9 @@ Removes the specified person from the contacts list and adds the person into the
 
 Format: `archive INDEX`
 
-* Archives the person at the specified INDEX.
+* Archives the person at the specified `INDEX`.
 * The index refers to the index number shown in the _displayed person list_. 
-* The index must be a positive integer 1, 2, 3, ...
+* The index **must be a positive integer** 1, 2, 3, ...
 * This command can only be performed while viewing the contacts list. Type `list` to view the contacts list.
 
 Examples:
@@ -194,13 +194,13 @@ Removes the specified person from the archived list and adds the person back int
 
 Format: `unarchive INDEX`
 
-* Unarchives the person at the specified INDEX
+* Unarchives the person at the specified `INDEX`.
 * The index refers to the index number shown in the _displayed person list_.
-* The index must be a positive integer 1, 2, 3, ...
+* The index **must be a positive integer** 1, 2, 3, ...
 * This command can only be performed while viewing the archived list. Type `alist` to view the archived list.
 
 Examples:
-* `alist` followed by `unarchive 1` unarchives the first person in the archived list of CulinaryContacts.
+* `alist` followed by `unarchive 1` unarchives the 1st person in the archived list of CulinaryContacts.
 
 #### Listing all archived persons: `alist`
 
