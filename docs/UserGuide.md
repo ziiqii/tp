@@ -194,6 +194,40 @@ Examples:
 
 ### Clearing all entries: `clear`
 
+### Archive
+
+#### Archiving a person: `archive`
+Removes the specified person from the contacts list and adds the person into the archived list.
+
+Format: `archive INDEX`
+
+* Archives the person at the specified `INDEX`.
+* The index refers to the index number shown in the _displayed person list_. 
+* The index **must be a positive integer** 1, 2, 3, ...
+* This command can only be performed while viewing the contacts list. Type `list` to view the contacts list.
+
+Examples:
+* `list` followed by `archive 1` archives the 1st person in the contacts list of CulinaryContacts.
+
+#### Unarchiving a person: `unarchive`
+Removes the specified person from the archived list and adds the person back into the contact list.
+
+Format: `unarchive INDEX`
+
+* Unarchives the person at the specified `INDEX`.
+* The index refers to the index number shown in the _displayed person list_.
+* The index **must be a positive integer** 1, 2, 3, ...
+* This command can only be performed while viewing the archived list. Type `alist` to view the archived list.
+
+Examples:
+* `alist` followed by `unarchive 1` unarchives the 1st person in the archived list of CulinaryContacts.
+
+#### Listing all archived persons: `alist`
+
+Shows a list of all persons in the archived list of CulinaryContacts.
+
+Format: `alist`
+
 Remove all persons and reservations from CulinaryContacts.
 
 Format: `clear`
@@ -222,6 +256,43 @@ CulinaryContacts data are saved automatically as a JSON file `[JAR file location
 If your changes to the data file makes its format invalid, CulinaryContacts will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
 Furthermore, certain edits can cause the CulinaryContacts to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </box>
+
+### Reservations
+
+#### Adding a reservation: `rsv`
+
+Adds a reservation to CulinaryContacts.
+
+Format: `rsv INDEX d/DATE t/TIME p/PAX`
+* Adds a reservation for the person at the specified `INDEX`. The index refers to the index number shown in the _displayed person list_.
+* The index **must be a positive integer** 1, 2, 3, …​
+* `DATE` **must be in yyyy-MM-dd** format.
+* `TIME` **must be in HHmm** format.
+* `PAX` **must be a positive integer**.
+
+Example:
+* `rsv 1 d/2024-04-17 t/1800 p/8`
+
+#### Deleting a reservation: `rsvdel`
+
+Deletes the specified reservation from CulinaryContacts.
+
+Format: `rsvdel INDEX`
+* Deletes the reservation at the specified `INDEX`.
+* The index refers to the index number shown in the _displayed reservation list_.
+* The index **must be a positive integer** 1, 2, 3, …​
+
+Example:
+* `rsvdel 2` deletes the 2nd reservation in CulinaryContacts.
+
+#### Sorting reservations: `rsvsort`
+
+Shows a sorted list of all reservations in CulinaryContacts.
+
+Format: `rsvsort`
+* Upcoming reservations are always on top of expired reservations.
+* Upcoming reservations are sorted from earliest to latest.
+* Expired reservations are also sorted from earliest to latest.
 
 ## FAQ
 
