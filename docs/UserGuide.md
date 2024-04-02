@@ -135,7 +135,7 @@ Edits an existing person in CulinaryContacts.
 
 Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
 
-* Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
+* Edits the person at the specified `INDEX`. The index refers to the index number shown in the _displayed person list_. The index **must be a positive integer** 1, 2, 3, …​
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
 * When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
@@ -144,11 +144,11 @@ Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
 
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
-*  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
+*  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and removes all existing tags.
 
 ### Finding persons by name: `find`
 
-Finds persons whose names contain any of the given keywords in the displayed person list.
+Finds persons whose names contain any of the given keywords in the _displayed person list_.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
@@ -166,7 +166,7 @@ Examples:
 
 ### Filtering persons by tag: `filter`
 
-Finds persons that are tagged with all the given tags in the displayed person list.
+Finds persons that are tagged with all the given tags in the _displayed person list_.
 
 Format: `filter TAG [MORE_TAGS]`
 
@@ -186,7 +186,7 @@ Deletes the specified person from CulinaryContacts.
 Format: `delete INDEX`
 
 * Deletes the person at the specified `INDEX`.
-* The index refers to the index number shown in the displayed person list.
+* The index refers to the index number shown in the _displayed person list_.
 * The index **must be a positive integer** 1, 2, 3, …​
 
 Examples:
@@ -194,7 +194,7 @@ Examples:
 
 ### Clearing all entries: `clear`
 
-Clears all persons and reservations from CulinaryContacts.
+Remove all persons and reservations from CulinaryContacts.
 
 Format: `clear`
 
@@ -238,20 +238,20 @@ Furthermore, certain edits can cause the CulinaryContacts to behave in unexpecte
 
 ## Command Summary
 
-| Command       | Format, Examples                                                                                                                                                     |
-|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **help**      | `help`                                                                                                                                                               |
-| **add**       | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`<br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague` |
-| **list**      | `list`                                                                                                                                                               |
-| **edit**      | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                          |
-| **find**      | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                           |
-| **filter**    | `filter TAG [MORE_TAGS]`<br> e.g., `filter supplier seafood`                                                                                                         |
-| **delete**    | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                  |
-| **archive**   | `archive INDEX`<br> e.g., `archive 2`                                                                                                                                |
-| **alist**     | `alist`                                                                                                                                                              |
-| **unarchive** | `unarchive INDEX`<br> e.g., `unarchive 2`                                                                                                                            |
-| **rsv**       | `rsv INDEX d/DATE t/TIME p/PAX`<br> e.g., `rsv 1 d/2024-04-15 t/1800 p/4`                                                                                            |
-| **rsvdel**    | `rsvdel INDEX`<br> e.g., `rsvdel 1`                                                                                                                                  |
-| **rsvsort**   | `rsvsort`                                                                                                                                                            |
-| **clear**     | `clear`                                                                                                                                                              |
+| Command       | Format, Examples                                                                                                                                                             |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **help**      | `help`                                                                                                                                                                       |
+| **add**       | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`<br> e.g., `add n/Alex Yeoh p/87438807 e/alexyeoh@example.com a/Blk 30 Geylang Street 29, #01-40 t/supplier t/durian` |
+| **list**      | `list`                                                                                                                                                                       |
+| **edit**      | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                  |
+| **find**      | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                   |
+| **filter**    | `filter TAG [MORE_TAGS]`<br> e.g., `filter supplier seafood`                                                                                                                 |
+| **delete**    | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                          |
+| **archive**   | `archive INDEX`<br> e.g., `archive 2`                                                                                                                                        |
+| **alist**     | `alist`                                                                                                                                                                      |
+| **unarchive** | `unarchive INDEX`<br> e.g., `unarchive 2`                                                                                                                                    |
+| **rsv**       | `rsv INDEX d/DATE t/TIME p/PAX`<br> e.g., `rsv 1 d/2024-04-15 t/1800 p/4`                                                                                                    |
+| **rsvdel**    | `rsvdel INDEX`<br> e.g., `rsvdel 1`                                                                                                                                          |
+| **rsvsort**   | `rsvsort`                                                                                                                                                                    |
+| **clear**     | `clear`                                                                                                                                                                      |
 
