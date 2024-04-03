@@ -102,7 +102,7 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 Shows the full command summary of CulinaryContacts at a glance.
 Press 'q' to close the help window.
 
-![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/61652399/f4b23a66-9ff7-4bec-902b-09c764b85fbb)
+![help window](images/help_window.png)
 
 
 Format: `help`
@@ -162,7 +162,6 @@ Format: `find KEYWORD [MORE_KEYWORDS]`
 Examples:
 * `find John` returns `john` and `John Doe`.
 * `find alex david` returns `Alex Yeoh` and `David Li`.<br>
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
 
 ### Filtering persons by tag: `filter`
 
@@ -228,12 +227,14 @@ Shows a list of all persons in the archived list of CulinaryContacts.
 
 Format: `alist`
 
+![alist](images/alist.png)
+
 Remove all persons and reservations from CulinaryContacts.
 
 Format: `clear`
 
 * A pop-up confirmation message will appear, where the user must confirm their choice.<br>
-  ![result for 'clear'](images/clearConfirmationMessage.png)
+  ![clear confirmation](images/clear_confirmation.png)
   * If user types `y`, all contacts will be cleared and a success message will be shown: `CulinaryContacts has been cleared!`.
   * If user types `n` or anything else, the clear command will be cancelled and a message will be shown: `Clear cancelled!`.
 
