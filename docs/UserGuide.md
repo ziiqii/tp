@@ -6,11 +6,10 @@ pageNav: 3
 
 # CulinaryContacts User Guide
 
-CulinaryContacts is a **desktop app for managing contacts, optimized for use via a  Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, CulinaryContacts can get your contact management tasks done faster than traditional GUI apps.
+CulinaryContacts is a **desktop app for managing contacts and reservations in your restaurant, optimized for use via a  Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, CulinaryContacts can get your contact management tasks done faster than traditional GUI apps.
 
 <!-- * Table of Contents -->
 * [Quickstart](#quickstart)
-* [Navigating the User Guide](#navigating-the-user-guide)
 * [Interpreting the GUI](#interpreting-the-gui)
     * [Main Window](#main-window)
     * [Contact Card](#contact-card)
@@ -72,15 +71,18 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Navigating the User Guide
-
---------------------------------------------------------------------------------------------------------------------
-
 ## Interpreting the GUI
 
 ### Main Window
 ![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/7995f6c2-220c-4070-905a-b10a7482131a)
 
+| **Component**         | Description                                                                                                                                                                                                                                                                                                                                         |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Command Box**       | Here is where you enter commands to perform actions within the app.                                                                                                                                                                                                                                                                                 |
+| **Result Display**    | After executing commands in the Command Box, the Result Box displays the outcomes of your actions. This includes confirmation messages as well as command execution success and failure messages.                                                                                                                                                   |
+| **Active Tab**        | The tab that is underlined is known as the active tab. This determines whether the contact list or the archived list is displayed in the Contacts Panel.                                                                                                                                                                                            |
+| **Contacts Panel**    | This section of the user interface displays detailed information about a specific contact from your network. It includes the Contact Index Number that shows the position of the contact within the panel, the contact’s name, tags, phone number, address, and email.                                                                              |
+| **Reservation Panel** | This section displays information about a reservation made by a contact. It includes the Reservation Index Number that shows the position of the reservation within the panel, the name of the contact that made the reservation, their contact number, the date and time of the reservation, as well as the number of people that will be present. |
 
 ### Contact Card
 ![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/d227b4d0-e5d0-4d0d-aaf1-086ad160ff8a)
@@ -98,10 +100,10 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 ### Reservation Card
 ![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/d0f5018c-82c5-44e9-88ed-00de80e6d085)
 
-| **Component**                | Description                                               |
-|------------------------------|-----------------------------------------------------------|
-| **Reservation Index Number** | The `INDEX` used in the `rsvdel` command.                 |
-| **Expiry Flag**              | The expiry flag indicates if the reservation has expired. |
+| **Component**                 | Description                                               |
+|-------------------------------|-----------------------------------------------------------|
+| **Reservation Index Number**  | The `INDEX` used in the `rsvdel` command.                 |
+| **Expiry Flag**               | The expiry flag indicates if the reservation has expired. |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -294,6 +296,17 @@ Format: `alist`
 ![alist](images/alist.png)
 
 ### Reservations
+
+<box type="info" seamless>
+
+**Notes about reservations:**<br>
+
+* The current implementation of reservations does not support edit cascading, i.e. editing a person in the contacts panel does not update the details of the same person in the reservation panel.
+  * If the user intends to edit the reservation details of a person, they will have to:
+    1. Edit the person's details in the contacts panel.
+    2. Delete all reservations made by the person.
+    3. Add a new reservation for every reservation deleted in the previous step with the newly updated person.
+</box>
 
 #### Adding a reservation: `rsv`
 
