@@ -12,6 +12,8 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 * [Quickstart](#quickstart)
 * [Navigating the User Guide](#navigating-the-user-guide)
 * [Interpreting the GUI](#interpreting-the-gui)
+    * [Main Window] (#main-window)
+    * 
 * [Features](#features)
     * [Viewing help:`help`](#viewing-help-help)
     * [Adding a person: `add`](#adding-a-person-add)
@@ -97,18 +99,52 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </box>
 
-### Viewing help: `help`
+### Utility 
+
+#### Viewing help: `help`
 
 Shows the full command summary of CulinaryContacts at a glance.
 Press 'q' to close the help window.
 
 ![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/61652399/f4b23a66-9ff7-4bec-902b-09c764b85fbb)
 
-
 Format: `help`
 
+Remove all persons and reservations from CulinaryContacts.
 
-### Adding a person: `add`
+#### Clearing all entries: `clear`
+
+Format: `clear`
+
+* A pop-up confirmation message will appear, where the user must confirm their choice.<br>
+  ![result for 'clear'](images/clearConfirmationMessage.png)
+    * If user types `y`, all contacts will be cleared and a success message will be shown: `CulinaryContacts has been cleared!`.
+    * If user types `n` or anything else, the clear command will be cancelled and a message will be shown: `Clear cancelled!`.
+
+
+#### Saving the data
+
+CulinaryContacts data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+
+#### Editing the data file
+
+CulinaryContacts data are saved automatically as a JSON file `[JAR file location]/data/culinarycontacts.json`. Advanced users are welcome to update data directly by editing that data file.
+
+<box type="warning" seamless>
+**Caution:**
+If your changes to the data file makes its format invalid, CulinaryContacts will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
+Furthermore, certain edits can cause the CulinaryContacts to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
+</box>
+
+#### Exiting the program: `exit`
+
+Exits the program.
+
+Format: `exit`
+
+### Contacts
+
+#### Adding a person: `add`
 
 Adds a person to CulinaryContacts.
 
@@ -123,13 +159,13 @@ Examples:
 * `add n/Alex Yeoh p/87438807 e/alexyeoh@example.com a/Blk 30 Geylang Street 29, #01-40 t/supplier t/durian`
 * `add n/David Lee p/91031282 e/david@example.com a/Blk 436 Serangoon Gardens Street 26, #02-43 t/customer`
 
-### Listing all persons: `list`
+#### Listing all persons: `list`
 
 Shows a list of all persons in the contacts list of CulinaryContacts.
 
 Format: `list`
 
-### Editing a person: `edit`
+#### Editing a person: `edit`
 
 Edits an existing person in CulinaryContacts.
 
@@ -146,7 +182,7 @@ Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
 *  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and removes all existing tags.
 
-### Finding persons by name: `find`
+#### Finding persons by name: `find`
 
 Finds persons whose names contain any of the given keywords in the _displayed person list_.
 
@@ -164,7 +200,7 @@ Examples:
 * `find alex david` returns `Alex Yeoh` and `David Li`.<br>
   ![result for 'find alex david'](images/findAlexDavidResult.png)
 
-### Filtering persons by tag: `filter`
+#### Filtering persons by tag: `filter`
 
 Finds persons that are tagged with all the given tags in the _displayed person list_.
 
@@ -179,7 +215,7 @@ Examples:
 * `filter supplier` returns persons with the `supplier` tag.
 * `filter supplier seafood` returns persons with both `supplier` and `seafood` tags.
 
-### Deleting a person: `delete`
+#### Deleting a person: `delete`
 
 Deletes the specified person from CulinaryContacts.
 
@@ -191,8 +227,6 @@ Format: `delete INDEX`
 
 Examples:
 * `list` followed by `delete 2` deletes the 2nd person in the contacts list of CulinaryContacts.
-
-### Clearing all entries: `clear`
 
 ### Archive
 
@@ -227,35 +261,6 @@ Examples:
 Shows a list of all persons in the archived list of CulinaryContacts.
 
 Format: `alist`
-
-Remove all persons and reservations from CulinaryContacts.
-
-Format: `clear`
-
-* A pop-up confirmation message will appear, where the user must confirm their choice.<br>
-  ![result for 'clear'](images/clearConfirmationMessage.png)
-  * If user types `y`, all contacts will be cleared and a success message will be shown: `CulinaryContacts has been cleared!`.
-  * If user types `n` or anything else, the clear command will be cancelled and a message will be shown: `Clear cancelled!`.
-
-### Exiting the program: `exit`
-
-Exits the program.
-
-Format: `exit`
-
-### Saving the data
-
-CulinaryContacts data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
-
-### Editing the data file
-
-CulinaryContacts data are saved automatically as a JSON file `[JAR file location]/data/culinarycontacts.json`. Advanced users are welcome to update data directly by editing that data file.
-
-<box type="warning" seamless>
-**Caution:**
-If your changes to the data file makes its format invalid, CulinaryContacts will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
-Furthermore, certain edits can cause the CulinaryContacts to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
-</box>
 
 ### Reservations
 
