@@ -83,12 +83,17 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 
 
 ### Contact Card
-![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/f5ac43bd-67d5-47c2-a350-d4e7f135d055)
+![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/d227b4d0-e5d0-4d0d-aaf1-086ad160ff8a)
 
 | **Component**            | Description                                                  |
 |--------------------------|--------------------------------------------------------------|
 | **Contact Index Number** | The `INDEX` used in `edit`, `delete` and `rsv` commands.     |
 | **Tags**                 | Tags are used for finding persons with the `filter` command. |
+
+* The 'supplier' tag is green.
+* The 'employee' tag is blue.
+* The 'customer' tag is yellow.
+* All other tags are white.
 
 ### Reservation Card
 ![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/d0f5018c-82c5-44e9-88ed-00de80e6d085)
