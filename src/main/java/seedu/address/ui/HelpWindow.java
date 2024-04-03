@@ -24,7 +24,7 @@ import seedu.address.commons.core.LogsCenter;
 public class HelpWindow extends UiPart<Stage> {
 
     public static final String USERGUIDE_URL = "https://ay2324s2-cs2103t-w09-3.github.io/tp/UserGuide.html";
-    public static final String HELP_MESSAGE = "For more details, refer to the user guide:\n" + USERGUIDE_URL
+    public static final String HELP_MESSAGE = "For more details, refer to the user guide: " + USERGUIDE_URL
             + "\n\nThings to note:"
             + "\n  • Items in square brackets are optional."
             + "\n  • Items with '...' after them can be used multiple times including zero times."
