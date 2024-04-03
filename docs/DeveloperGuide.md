@@ -13,7 +13,10 @@
 
 ## **Acknowledgements**
 
-_{ list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well }_
+* UI Rendering: [JavaFX](https://openjfx.io/)
+* Testing Framework: [JUnit5](https://github.com/junit-team/junit5)
+* JSON Data Management: [Jackson](https://github.com/FasterXML/jackson)
+* Base UI Framework: [AddressBook Level-3](https://se-education.org/addressbook-level3/)
 
 --------------------------------------------------------------------------------------------------------------------
 
