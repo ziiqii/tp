@@ -12,23 +12,34 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 * [Quickstart](#quickstart)
 * [Navigating the User Guide](#navigating-the-user-guide)
 * [Interpreting the GUI](#interpreting-the-gui)
-    * [Main Window] (#main-window)
-    * 
+    * [Main Window](#main-window)
+    * [Contact Card](#contact-card)
+    * [Reservation Card](#reservation-card)
 * [Features](#features)
-    * [Viewing help:`help`](#viewing-help-help)
-    * [Adding a person: `add`](#adding-a-person-add)
-    * [Listing all persons: `list`](#listing-all-persons-list)
-    * [Editing a person: `edit`](#editing-a-person-edit)
-    * [Finding persons by name: `find`](#finding-persons-by-name-find)
-    * [Filtering persons by tag: `filter`](#filtering-persons-by-tag-filter)
-    * [Deleting a person: `delete`](#deleting-a-person-delete)
-    * [Clearing all entries: `clear`](#clearing-all-entries-clear)
-    * [Exiting the program: `exit`](#exiting-the-program-exit)
-    * [Saving the data](#saving-the-data)
-    * [Editing the data file](#editing-the-data-file)
-    * [Archiving datafiles `[coming in v2.0]`](#archiving-data-files-coming-in-v2-0)
+    * [Utility](#utility)
+        * [Viewing help:`help`](#viewing-help-help)
+        * [Clearing all entries: `clear`](#clearing-all-entries-clear)
+        * [Saving the data](#saving-the-data)
+        * [Editing the data file](#editing-the-data-file)
+        * [Exiting the program: `exit`](#exiting-the-program-exit)
+    * [Contacts](#contacts)
+        * [Adding a person: `add`](#adding-a-person-add)
+        * [Listing all persons: `list`](#listing-all-persons-list)
+        * [Editing a person: `edit`](#editing-a-person-edit)
+        * [Finding persons by name: `find`](#finding-persons-by-name-find)
+        * [Filtering persons by tag: `filter`](#filtering-persons-by-tag-filter)
+        * [Deleting a person: `delete`](#deleting-a-person-delete)
+    * [Archive](#archive)
+        * [Archiving a person: `archive`](#archiving-a-person--archive)
+        * [Unarchiving a person: `unarchive`](#unarchiving-a-person--unarchive)
+        * [Listing all archived persons: `alist`](#listing-all-archived-persons--alist)
+    * [Reservations](#reservations)
+        * [Adding a reservation: `rsv`](#adding-a-reservation--rsv)
+        * [Deleting a reservation: `rsvdel`](#deleting-a-reservation--rsvdel)
+        * [Sorting reservations: `rsvsort`](#sorting-reservations--rsvsort)
 * [FAQ](#faq)
 * [Known Issues](#known-issues)
+* [Glossary](#glossary)
 * [Command Summary](#command-summary)
 --------------------------------------------------------------------------------------------------------------------
 
@@ -67,7 +78,7 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 
 ## Interpreting the GUI
 
-### Main window
+### Main Window
 
 ### Contact Card
 
@@ -299,6 +310,9 @@ Format: `rsvsort`
 * Upcoming reservations are sorted from earliest to latest.
 * Expired reservations are also sorted from earliest to latest.
 
+--------------------------------------------------------------------------------------------------------------------
+
+
 ## FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
@@ -311,6 +325,12 @@ Format: `rsvsort`
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
 --------------------------------------------------------------------------------------------------------------------
+
+## Glossary
+* **displayed person list**: The contacts or archived list of persons that you are currently viewing.
+
+--------------------------------------------------------------------------------------------------------------------
+
 
 ## Command Summary
 
