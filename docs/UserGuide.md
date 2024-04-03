@@ -79,10 +79,14 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 ## Interpreting the GUI
 
 ### Main Window
+![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/7995f6c2-220c-4070-905a-b10a7482131a)
+
 
 ### Contact Card
+![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/f5ac43bd-67d5-47c2-a350-d4e7f135d055)
 
 ### Reservation Card
+![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/d0f5018c-82c5-44e9-88ed-00de80e6d085)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -117,7 +121,7 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 Shows the full command summary of CulinaryContacts at a glance.
 Press 'q' to close the help window.
 
-![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/61652399/f4b23a66-9ff7-4bec-902b-09c764b85fbb)
+![help window](images/help_window.png)
 
 Format: `help`
 
@@ -209,7 +213,6 @@ Format: `find KEYWORD [MORE_KEYWORDS]`
 Examples:
 * `find John` returns `john` and `John Doe`.
 * `find alex david` returns `Alex Yeoh` and `David Li`.<br>
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
 
 #### Filtering persons by tag: `filter`
 
@@ -272,6 +275,37 @@ Examples:
 Shows a list of all persons in the archived list of CulinaryContacts.
 
 Format: `alist`
+
+![alist](images/alist.png)
+
+Remove all persons and reservations from CulinaryContacts.
+
+Format: `clear`
+
+* A pop-up confirmation message will appear, where the user must confirm their choice.<br>
+  ![clear confirmation](images/clear_confirmation.png)
+  * If user types `y`, all contacts will be cleared and a success message will be shown: `CulinaryContacts has been cleared!`.
+  * If user types `n` or anything else, the clear command will be cancelled and a message will be shown: `Clear cancelled!`.
+
+### Exiting the program: `exit`
+
+Exits the program.
+
+Format: `exit`
+
+### Saving the data
+
+CulinaryContacts data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+
+### Editing the data file
+
+CulinaryContacts data are saved automatically as a JSON file `[JAR file location]/data/culinarycontacts.json`. Advanced users are welcome to update data directly by editing that data file.
+
+<box type="warning" seamless>
+**Caution:**
+If your changes to the data file makes its format invalid, CulinaryContacts will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
+Furthermore, certain edits can cause the CulinaryContacts to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
+</box>
 
 ### Reservations
 
