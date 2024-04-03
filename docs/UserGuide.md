@@ -278,35 +278,6 @@ Format: `alist`
 
 ![alist](images/alist.png)
 
-Remove all persons and reservations from CulinaryContacts.
-
-Format: `clear`
-
-* A pop-up confirmation message will appear, where the user must confirm their choice.<br>
-  ![clear confirmation](images/clear_confirmation.png)
-  * If user types `y`, all contacts will be cleared and a success message will be shown: `CulinaryContacts has been cleared!`.
-  * If user types `n` or anything else, the clear command will be cancelled and a message will be shown: `Clear cancelled!`.
-
-### Exiting the program: `exit`
-
-Exits the program.
-
-Format: `exit`
-
-### Saving the data
-
-CulinaryContacts data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
-
-### Editing the data file
-
-CulinaryContacts data are saved automatically as a JSON file `[JAR file location]/data/culinarycontacts.json`. Advanced users are welcome to update data directly by editing that data file.
-
-<box type="warning" seamless>
-**Caution:**
-If your changes to the data file makes its format invalid, CulinaryContacts will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
-Furthermore, certain edits can cause the CulinaryContacts to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
-</box>
-
 ### Reservations
 
 #### Adding a reservation: `rsv`
