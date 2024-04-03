@@ -10,7 +10,6 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 
 <!-- * Table of Contents -->
 * [Quickstart](#quickstart)
-* [Navigating the User Guide](#navigating-the-user-guide)
 * [Interpreting the GUI](#interpreting-the-gui)
     * [Main Window](#main-window)
     * [Contact Card](#contact-card)
@@ -69,10 +68,6 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
    * `exit` : Exits the app.
 
 1. Refer to the [Features](#features) below for details of each command.
-
---------------------------------------------------------------------------------------------------------------------
-
-## Navigating the User Guide
 
 --------------------------------------------------------------------------------------------------------------------
 
