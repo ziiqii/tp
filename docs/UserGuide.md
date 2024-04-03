@@ -81,6 +81,13 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 ### Main Window
 ![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/7995f6c2-220c-4070-905a-b10a7482131a)
 
+| **Component**         | Description                                                                                                                                                                                                                                                                                                                                         |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Command Box**       | Here is where you enter commands to perform actions within the app.                                                                                                                                                                                                                                                                                 |
+| **Result Display**    | After executing commands in the Command Box, the Result Box displays the outcomes of your actions. This includes confirmation messages as well as command execution success and failure messages.                                                                                                                                                   |
+| **Active Tab**        | The tab that is underlined is known as the active tab. This determines whether the contact list or the archived list is displayed in the Contacts Panel.                                                                                                                                                                                            |
+| **Contacts Panel**    | This section of the user interface displays detailed information about a specific contact from your network. It includes the Contact Index Number that shows the position of the contact within the panel, the contact’s name, tags, phone number, address, and email.                                                                              |
+| **Reservation Panel** | This section displays information about a reservation made by a contact. It includes the Reservation Index Number that shows the position of the reservation within the panel, the name of the contact that made the reservation, their contact number, the date and time of the reservation, as well as the number of people that will be present. |
 
 ### Contact Card
 ![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/f5ac43bd-67d5-47c2-a350-d4e7f135d055)
@@ -93,10 +100,10 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 ### Reservation Card
 ![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/d0f5018c-82c5-44e9-88ed-00de80e6d085)
 
-| **Component**                | Description                                               |
-|------------------------------|-----------------------------------------------------------|
-| **Reservation Index Number** | The `INDEX` used in the `rsvdel` command.                 |
-| **Expiry Flag**              | The expiry flag indicates if the reservation has expired. |
+| **Component**                 | Description                                               |
+|-------------------------------|-----------------------------------------------------------|
+| **Reservation Index Number**  | The `INDEX` used in the `rsvdel` command.                 |
+| **Expiry Flag**               | The expiry flag indicates if the reservation has expired. |
 
 --------------------------------------------------------------------------------------------------------------------
 
