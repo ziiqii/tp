@@ -85,8 +85,18 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 ### Contact Card
 ![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/f5ac43bd-67d5-47c2-a350-d4e7f135d055)
 
+| **Component**            | Description                                                  |
+|--------------------------|--------------------------------------------------------------|
+| **Contact Index Number** | The `INDEX` used in `edit`, `delete` and `rsv` commands.     |
+| **Tags**                 | Tags are used for finding persons with the `filter` command. |
+
 ### Reservation Card
 ![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/d0f5018c-82c5-44e9-88ed-00de80e6d085)
+
+| **Component**                | Description                                               |
+|------------------------------|-----------------------------------------------------------|
+| **Reservation Index Number** | The `INDEX` used in the `rsvdel` command.                 |
+| **Expiry Flag**              | The expiry flag indicates if the reservation has expired. |
 
 --------------------------------------------------------------------------------------------------------------------
 
