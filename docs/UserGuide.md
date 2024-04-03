@@ -12,21 +12,34 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 * [Quickstart](#quickstart)
 * [Navigating the User Guide](#navigating-the-user-guide)
 * [Interpreting the GUI](#interpreting-the-gui)
+    * [Main Window](#main-window)
+    * [Contact Card](#contact-card)
+    * [Reservation Card](#reservation-card)
 * [Features](#features)
-    * [Viewing help:`help`](#viewing-help-help)
-    * [Adding a person: `add`](#adding-a-person-add)
-    * [Listing all persons: `list`](#listing-all-persons-list)
-    * [Editing a person: `edit`](#editing-a-person-edit)
-    * [Finding persons by name: `find`](#finding-persons-by-name-find)
-    * [Filtering persons by tag: `filter`](#filtering-persons-by-tag-filter)
-    * [Deleting a person: `delete`](#deleting-a-person-delete)
-    * [Clearing all entries: `clear`](#clearing-all-entries-clear)
-    * [Exiting the program: `exit`](#exiting-the-program-exit)
-    * [Saving the data](#saving-the-data)
-    * [Editing the data file](#editing-the-data-file)
-    * [Archiving datafiles `[coming in v2.0]`](#archiving-data-files-coming-in-v2-0)
+    * [Utility](#utility)
+        * [Viewing help:`help`](#viewing-help-help)
+        * [Clearing all entries: `clear`](#clearing-all-entries-clear)
+        * [Saving the data](#saving-the-data)
+        * [Editing the data file](#editing-the-data-file)
+        * [Exiting the program: `exit`](#exiting-the-program-exit)
+    * [Contacts](#contacts)
+        * [Adding a person: `add`](#adding-a-person-add)
+        * [Listing all persons: `list`](#listing-all-persons-list)
+        * [Editing a person: `edit`](#editing-a-person-edit)
+        * [Finding persons by name: `find`](#finding-persons-by-name-find)
+        * [Filtering persons by tag: `filter`](#filtering-persons-by-tag-filter)
+        * [Deleting a person: `delete`](#deleting-a-person-delete)
+    * [Archive](#archive)
+        * [Archiving a person: `archive`](#archiving-a-person-archive)
+        * [Unarchiving a person: `unarchive`](#unarchiving-a-person-unarchive)
+        * [Listing all archived persons: `alist`](#listing-all-archived-persons-alist)
+    * [Reservations](#reservations)
+        * [Adding a reservation: `rsv`](#adding-a-reservation-rsv)
+        * [Deleting a reservation: `rsvdel`](#deleting-a-reservation-rsvdel)
+        * [Sorting reservations: `rsvsort`](#sorting-reservations-rsvsort)
 * [FAQ](#faq)
 * [Known Issues](#known-issues)
+* [Glossary](#glossary)
 * [Command Summary](#command-summary)
 --------------------------------------------------------------------------------------------------------------------
 
@@ -65,8 +78,9 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 
 ## Interpreting the GUI
 
-### Main window
+### Main Window
 ![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/7995f6c2-220c-4070-905a-b10a7482131a)
+
 
 ### Contact Card
 ![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/f5ac43bd-67d5-47c2-a350-d4e7f135d055)
@@ -100,18 +114,52 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </box>
 
-### Viewing help: `help`
+### Utility 
+
+#### Viewing help: `help`
 
 Shows the full command summary of CulinaryContacts at a glance.
 Press 'q' to close the help window.
 
 ![help window](images/help_window.png)
 
-
 Format: `help`
 
+Remove all persons and reservations from CulinaryContacts.
 
-### Adding a person: `add`
+#### Clearing all entries: `clear`
+
+Format: `clear`
+
+* A pop-up confirmation message will appear, where the user must confirm their choice.<br>
+  ![result for 'clear'](images/clearConfirmationMessage.png)
+    * If user types `y`, all contacts will be cleared and a success message will be shown: `CulinaryContacts has been cleared!`.
+    * If user types `n` or anything else, the clear command will be cancelled and a message will be shown: `Clear cancelled!`.
+
+
+#### Saving the data
+
+CulinaryContacts data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+
+#### Editing the data file
+
+CulinaryContacts data are saved automatically as a JSON file `[JAR file location]/data/culinarycontacts.json`. Advanced users are welcome to update data directly by editing that data file.
+
+<box type="warning" seamless>
+**Caution:**
+If your changes to the data file makes its format invalid, CulinaryContacts will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
+Furthermore, certain edits can cause the CulinaryContacts to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
+</box>
+
+#### Exiting the program: `exit`
+
+Exits the program.
+
+Format: `exit`
+
+### Contacts
+
+#### Adding a person: `add`
 
 Adds a person to CulinaryContacts.
 
@@ -126,13 +174,13 @@ Examples:
 * `add n/Alex Yeoh p/87438807 e/alexyeoh@example.com a/Blk 30 Geylang Street 29, #01-40 t/supplier t/durian`
 * `add n/David Lee p/91031282 e/david@example.com a/Blk 436 Serangoon Gardens Street 26, #02-43 t/customer`
 
-### Listing all persons: `list`
+#### Listing all persons: `list`
 
 Shows a list of all persons in the contacts list of CulinaryContacts.
 
 Format: `list`
 
-### Editing a person: `edit`
+#### Editing a person: `edit`
 
 Edits an existing person in CulinaryContacts.
 
@@ -149,7 +197,7 @@ Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
 *  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and removes all existing tags.
 
-### Finding persons by name: `find`
+#### Finding persons by name: `find`
 
 Finds persons whose names contain any of the given keywords in the _displayed person list_.
 
@@ -166,7 +214,7 @@ Examples:
 * `find John` returns `john` and `John Doe`.
 * `find alex david` returns `Alex Yeoh` and `David Li`.<br>
 
-### Filtering persons by tag: `filter`
+#### Filtering persons by tag: `filter`
 
 Finds persons that are tagged with all the given tags in the _displayed person list_.
 
@@ -181,7 +229,7 @@ Examples:
 * `filter supplier` returns persons with the `supplier` tag.
 * `filter supplier seafood` returns persons with both `supplier` and `seafood` tags.
 
-### Deleting a person: `delete`
+#### Deleting a person: `delete`
 
 Deletes the specified person from CulinaryContacts.
 
@@ -193,8 +241,6 @@ Format: `delete INDEX`
 
 Examples:
 * `list` followed by `delete 2` deletes the 2nd person in the contacts list of CulinaryContacts.
-
-### Clearing all entries: `clear`
 
 ### Archive
 
@@ -298,6 +344,9 @@ Format: `rsvsort`
 * Upcoming reservations are sorted from earliest to latest.
 * Expired reservations are also sorted from earliest to latest.
 
+--------------------------------------------------------------------------------------------------------------------
+
+
 ## FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
@@ -310,6 +359,12 @@ Format: `rsvsort`
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
 --------------------------------------------------------------------------------------------------------------------
+
+## Glossary
+* **displayed person list**: The contacts or archived list of persons that you are currently viewing.
+
+--------------------------------------------------------------------------------------------------------------------
+
 
 ## Command Summary
 
