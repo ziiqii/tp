@@ -66,10 +66,13 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 ## Interpreting the GUI
 
 ### Main window
+![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/7995f6c2-220c-4070-905a-b10a7482131a)
 
 ### Contact Card
+![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/f5ac43bd-67d5-47c2-a350-d4e7f135d055)
 
 ### Reservation Card
+![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/d0f5018c-82c5-44e9-88ed-00de80e6d085)
 
 --------------------------------------------------------------------------------------------------------------------
 
