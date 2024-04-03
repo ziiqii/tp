@@ -6,7 +6,7 @@ pageNav: 3
 
 # CulinaryContacts User Guide
 
-CulinaryContacts is a **desktop app for managing contacts, optimized for use via a  Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, CulinaryContacts can get your contact management tasks done faster than traditional GUI apps.
+CulinaryContacts is a **desktop app for managing contacts and reservations in your restaurant, optimized for use via a  Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, CulinaryContacts can get your contact management tasks done faster than traditional GUI apps.
 
 <!-- * Table of Contents -->
 * [Quickstart](#quickstart)
@@ -291,6 +291,17 @@ Format: `alist`
 ![alist](images/alist.png)
 
 ### Reservations
+
+<box type="info" seamless>
+
+**Notes about reservations:**<br>
+
+* The current implementation of reservations does not support edit cascading, i.e. editing a person in the contacts panel does not update the details of the same person in the reservation panel.
+  * If the user intends to edit the reservation details of a person, they will have to:
+    1. Edit the person's details in the contacts panel.
+    2. Delete all reservations made by the person.
+    3. Add a new reservation for every reservation deleted in the previous step with the newly updated person.
+</box>
 
 #### Adding a reservation: `rsv`
 
