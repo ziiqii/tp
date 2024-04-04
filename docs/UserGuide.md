@@ -152,7 +152,7 @@ Format: `help`
 
 #### Clearing all entries: `clear`
 
-Remove all persons and reservations from CulinaryContacts.
+Removes all persons and reservations from CulinaryContacts.
 
 Format: `clear`
 
