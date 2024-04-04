@@ -6,7 +6,7 @@ pageNav: 3
 
 # CulinaryContacts User Guide
 
-CulinaryContacts is a **desktop app for managing contacts and reservations in your restaurant, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, CulinaryContacts can get your contact management tasks done faster than traditional GUI apps.
+CulinaryContacts is a **desktop app for managing contacts and reservations in your restaurant, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, CulinaryContacts can get your contact/reservation management tasks done faster than traditional GUI apps.
 
 <!-- * Table of Contents -->
 * [Quickstart](#quickstart)
@@ -38,7 +38,6 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
         * [Sorting reservations: `rsvsort`](#sorting-reservations-rsvsort)
 * [FAQ](#faq)
 * [Known Issues](#known-issues)
-* [Glossary](#glossary)
 * [Command Summary](#command-summary)
 --------------------------------------------------------------------------------------------------------------------
 
@@ -48,7 +47,7 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 
 1. Download the latest `culinarycontacts.jar` from [here](https://github.com/AY2324S2-CS2103T-W09-3/tp/releases).
 
-1. Copy the file to the folder you want to use as the _home folder_ for CulinaryContacts.
+1. Copy the file to the folder you want to use as the home folder for CulinaryContacts.
 
 1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar culinarycontacts.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
@@ -110,7 +109,13 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 
 ## Features
 
-_displayed person list_ refers to the contacts or archived list of persons that you are currently viewing.
+<box type="info" seamless>
+
+**Important terms:**<br>
+
+* _displayed person list_ refers to the contacts or archived list of persons that you are currently viewing.
+
+</box>
 
 <box type="info" seamless>
 
