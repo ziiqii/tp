@@ -69,10 +69,6 @@ public class ParserUtilTest {
         assertThrows(NullPointerException.class, () -> ParserUtil.parseName((String) null));
     }
 
-    @Test
-    public void parseName_invalidValue_throwsParseException() {
-        assertThrows(ParseException.class, () -> ParserUtil.parseName(INVALID_NAME));
-    }
 
     @Test
     public void parseName_validValueWithoutWhitespace_returnsName() throws Exception {

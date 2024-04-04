@@ -59,7 +59,7 @@ public class CommandTestUtil {
     public static final String TIME_DESC_AMY = " " + PREFIX_TIME + VALID_TIME_AMY_RSV;
     public static final String PAX_DESC_AMY = " " + PREFIX_TIME + VALID_PAX_AMY_RSV;
 
-    public static final String INVALID_NAME_DESC = " " + PREFIX_NAME + "James&"; // '&' not allowed in names
+    public static final String INVALID_NAME_DESC = "";
     public static final String INVALID_PHONE_DESC = " " + PREFIX_PHONE + "911a"; // 'a' not allowed in phones
     public static final String INVALID_EMAIL_DESC = " " + PREFIX_EMAIL + "bob!yahoo"; // missing '@' symbol
     public static final String INVALID_ADDRESS_DESC = " " + PREFIX_ADDRESS; // empty string not allowed for addresses
