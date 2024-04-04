@@ -301,7 +301,7 @@ Format: `alist`
 
 **Notes about reservations:**<br>
 
-* The current implementation of reservations does not support edit cascading, i.e. editing a person in the contacts panel does not update the details of the same person in the reservation panel.
+* Currently, editing a person in the contacts panel does not update the details of the same person in the reservation panel.
   * If the user intends to edit the reservation details of a person, they will have to:
     1. Edit the person's details in the contacts panel.
     2. Delete all reservations made by the person.
