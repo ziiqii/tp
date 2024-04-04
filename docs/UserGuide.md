@@ -6,7 +6,7 @@ pageNav: 3
 
 # CulinaryContacts User Guide
 
-CulinaryContacts is a **desktop app for managing contacts and reservations in your restaurant, optimized for use via a  Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, CulinaryContacts can get your contact management tasks done faster than traditional GUI apps.
+CulinaryContacts is a **desktop app for managing contacts and reservations in your restaurant, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, CulinaryContacts can get your contact management tasks done faster than traditional GUI apps.
 
 <!-- * Table of Contents -->
 * [Quickstart](#quickstart)
@@ -52,6 +52,7 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 
 1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar culinarycontacts.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
+   
    ![Ui](images/Ui.png)
 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
@@ -79,10 +80,10 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 | **Component**         | Description                                                                                                                                                                                                                                                                                                                                         |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Command Box**       | Here is where you enter commands to perform actions within the app.                                                                                                                                                                                                                                                                                 |
-| **Result Display**    | After executing commands in the Command Box, the Result Box displays the outcomes of your actions. This includes confirmation messages as well as command execution success and failure messages.                                                                                                                                                   |
-| **Active Tab**        | The tab that is underlined is known as the active tab. This determines whether the contact list or the archived list is displayed in the Contacts Panel.                                                                                                                                                                                            |
-| **Contacts Panel**    | This section of the user interface displays detailed information about a specific contact from your network. It includes the Contact Index Number that shows the position of the contact within the panel, the contact’s name, tags, phone number, address, and email.                                                                              |
-| **Reservation Panel** | This section displays information about a reservation made by a contact. It includes the Reservation Index Number that shows the position of the reservation within the panel, the name of the contact that made the reservation, their contact number, the date and time of the reservation, as well as the number of people that will be present. |
+| **Result Display**    | After executing commands in the Command Box, the Result Display shows the outcomes of your actions. This includes confirmation messages as well as command execution success and failure messages.                                                                                                                                                   |
+| **Active Tab**        | The tab that is underlined is known as the active tab. This indicates whether the contact list or the archived list is displayed in the Contacts Panel.                                                                                                                                                                                            |
+| **Contacts Panel**    | This panel contains a list of [Contact Cards](#contact-card).                                                                              |
+| **Reservation Panel** | This panel contains a list of [Reservation Cards](#reservation-card). |
 
 ### Contact Card
 ![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/d227b4d0-e5d0-4d0d-aaf1-086ad160ff8a)
@@ -109,6 +110,8 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 
 ## Features
 
+_displayed person list_ refers to the contacts or archived list of persons that you are currently viewing.
+
 <box type="info" seamless>
 
 **Notes about the command format:**<br>
@@ -120,12 +123,12 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
   e.g `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
 
 * Items with `…`​ after them can be used multiple times including zero times.<br>
-  e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+  e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/suppler`, `t/seafood t/supplier` etc.
 
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
+* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`, `alist`, `rsvsort`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
@@ -138,9 +141,9 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 Shows the full command summary of CulinaryContacts at a glance.
 Press 'q' to close the help window.
 
-![help window](images/help_window.png)
-
 Format: `help`
+
+![help window](images/help_window.png)
 
 #### Clearing all entries: `clear`
 
@@ -150,7 +153,7 @@ Format: `clear`
 
 * A pop-up confirmation message will appear, where the user must confirm their choice.<br>
   ![result for 'clear'](images/clear_confirmation.png)
-    * If user types `y`, all contacts will be cleared and a success message will be shown: `CulinaryContacts has been cleared!`.
+    * If user types `y`, all persons and reservations will be cleared and a success message will be shown: `CulinaryContacts has been cleared!`.
     * If user types `n` or anything else, the clear command will be cancelled and a message will be shown: `Clear cancelled!`.
 
 
@@ -179,7 +182,7 @@ Format: `exit`
 
 #### Adding a person: `add`
 
-Adds a person to CulinaryContacts.
+Adds a person to the _displayed person list_.
 
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
 
@@ -200,7 +203,7 @@ Format: `list`
 
 #### Editing a person: `edit`
 
-Edits an existing person in CulinaryContacts.
+Edits an existing person in the _displayed person list_.
 
 Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
 
@@ -249,7 +252,7 @@ Examples:
 
 #### Deleting a person: `delete`
 
-Deletes the specified person from CulinaryContacts.
+Deletes the specified person from the _displayed person list_.
 
 Format: `delete INDEX`
 
