@@ -6,11 +6,10 @@ pageNav: 3
 
 # CulinaryContacts User Guide
 
-CulinaryContacts is a **desktop app for managing contacts, optimized for use via a  Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, CulinaryContacts can get your contact management tasks done faster than traditional GUI apps.
+CulinaryContacts is a **desktop app for managing contacts and reservations in your restaurant, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, CulinaryContacts can get your contact/reservation management tasks done faster than traditional GUI apps.
 
 <!-- * Table of Contents -->
 * [Quickstart](#quickstart)
-* [Navigating the User Guide](#navigating-the-user-guide)
 * [Interpreting the GUI](#interpreting-the-gui)
     * [Main Window](#main-window)
     * [Contact Card](#contact-card)
@@ -39,7 +38,6 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
         * [Sorting reservations: `rsvsort`](#sorting-reservations-rsvsort)
 * [FAQ](#faq)
 * [Known Issues](#known-issues)
-* [Glossary](#glossary)
 * [Command Summary](#command-summary)
 --------------------------------------------------------------------------------------------------------------------
 
@@ -49,10 +47,11 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 
 1. Download the latest `culinarycontacts.jar` from [here](https://github.com/AY2324S2-CS2103T-W09-3/tp/releases).
 
-1. Copy the file to the folder you want to use as the _home folder_ for CulinaryContacts.
+1. Copy the file to the folder you want to use as the home folder for CulinaryContacts.
 
 1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar culinarycontacts.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
+   
    ![Ui](images/Ui.png)
 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
@@ -64,15 +63,11 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 
    * `delete 3` : Deletes the 3rd contact shown in the current list.
 
-   * `clear` : Deletes all contacts.
+   * `clear` : Removes all persons and reservations.
 
    * `exit` : Exits the app.
 
 1. Refer to the [Features](#features) below for details of each command.
-
---------------------------------------------------------------------------------------------------------------------
-
-## Navigating the User Guide
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -81,16 +76,46 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 ### Main Window
 ![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/7995f6c2-220c-4070-905a-b10a7482131a)
 
+| **Component**         | Description                                                                                                                                                                                                                                                                                                                                         |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Command Box**       | Here is where you enter commands to perform actions within the app.                                                                                                                                                                                                                                                                                 |
+| **Result Display**    | After executing commands in the Command Box, the Result Display shows the outcomes of your actions. This includes confirmation messages as well as command execution success and failure messages.                                                                                                                                                   |
+| **Active Tab**        | The tab that is underlined is known as the active tab. This indicates whether the contact list or the archived list is displayed in the Contacts Panel.                                                                                                                                                                                            |
+| **Contacts Panel**    | This panel contains a list of [Contact Cards](#contact-card).                                                                              |
+| **Reservation Panel** | This panel contains a list of [Reservation Cards](#reservation-card). |
 
 ### Contact Card
-![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/f5ac43bd-67d5-47c2-a350-d4e7f135d055)
+![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/d227b4d0-e5d0-4d0d-aaf1-086ad160ff8a)
+
+| **Component**            | Description                                                  |
+|--------------------------|--------------------------------------------------------------|
+| **Contact Index Number** | The `INDEX` used in `edit`, `delete` and `rsv` commands.     |
+| **Tags**                 | Tags are used for finding persons with the `filter` command. |
+
+* The 'supplier' tag is green.
+* The 'employee' tag is blue.
+* The 'customer' tag is yellow.
+* All other tags are white.
 
 ### Reservation Card
 ![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/d0f5018c-82c5-44e9-88ed-00de80e6d085)
 
+| **Component**                 | Description                                               |
+|-------------------------------|-----------------------------------------------------------|
+| **Reservation Index Number**  | The `INDEX` used in the `rsvdel` command.                 |
+| **Expiry Flag**               | The expiry flag indicates if the reservation has expired. |
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Features
+
+<box type="info" seamless>
+
+**Important terms:**<br>
+
+* _displayed person list_ refers to the contacts or archived list of persons that you are currently viewing.
+
+</box>
 
 <box type="info" seamless>
 
@@ -103,12 +128,12 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
   e.g `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
 
 * Items with `…`​ after them can be used multiple times including zero times.<br>
-  e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+  e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/suppler`, `t/seafood t/supplier` etc.
 
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
+* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`, `alist`, `rsvsort`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
@@ -121,19 +146,20 @@ CulinaryContacts is a **desktop app for managing contacts, optimized for use via
 Shows the full command summary of CulinaryContacts at a glance.
 Press 'q' to close the help window.
 
-![help window](images/help_window.png)
-
 Format: `help`
 
-Remove all persons and reservations from CulinaryContacts.
+![help window](images/help_window.png)
 
 #### Clearing all entries: `clear`
+
+Removes all persons and reservations from CulinaryContacts.
 
 Format: `clear`
 
 * A pop-up confirmation message will appear, where the user must confirm their choice.<br>
-  ![result for 'clear'](images/clearConfirmationMessage.png)
-    * If user types `y`, all contacts will be cleared and a success message will be shown: `CulinaryContacts has been cleared!`.
+
+  ![result for 'clear'](images/clear_confirmation.png)
+    * If user types `y`, all persons and reservations will be cleared and a success message will be shown: `Clear successful!`.
     * If user types `n` or anything else, the clear command will be cancelled and a message will be shown: `Clear cancelled!`.
 
 
@@ -146,6 +172,7 @@ CulinaryContacts data are saved in the hard disk automatically after any command
 CulinaryContacts data are saved automatically as a JSON file `[JAR file location]/data/culinarycontacts.json`. Advanced users are welcome to update data directly by editing that data file.
 
 <box type="warning" seamless>
+   
 **Caution:**
 If your changes to the data file makes its format invalid, CulinaryContacts will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
 Furthermore, certain edits can cause the CulinaryContacts to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
@@ -161,7 +188,7 @@ Format: `exit`
 
 #### Adding a person: `add`
 
-Adds a person to CulinaryContacts.
+Adds a person to the _displayed person list_.
 
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
 
@@ -182,7 +209,7 @@ Format: `list`
 
 #### Editing a person: `edit`
 
-Edits an existing person in CulinaryContacts.
+Edits an existing person in the _displayed person list_.
 
 Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
 
@@ -231,7 +258,7 @@ Examples:
 
 #### Deleting a person: `delete`
 
-Deletes the specified person from CulinaryContacts.
+Deletes the specified person from the _displayed person list_.
 
 Format: `delete INDEX`
 
@@ -278,36 +305,18 @@ Format: `alist`
 
 ![alist](images/alist.png)
 
-Remove all persons and reservations from CulinaryContacts.
-
-Format: `clear`
-
-* A pop-up confirmation message will appear, where the user must confirm their choice.<br>
-  ![clear confirmation](images/clear_confirmation.png)
-  * If user types `y`, all contacts will be cleared and a success message will be shown: `CulinaryContacts has been cleared!`.
-  * If user types `n` or anything else, the clear command will be cancelled and a message will be shown: `Clear cancelled!`.
-
-### Exiting the program: `exit`
-
-Exits the program.
-
-Format: `exit`
-
-### Saving the data
-
-CulinaryContacts data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
-
-### Editing the data file
-
-CulinaryContacts data are saved automatically as a JSON file `[JAR file location]/data/culinarycontacts.json`. Advanced users are welcome to update data directly by editing that data file.
-
-<box type="warning" seamless>
-**Caution:**
-If your changes to the data file makes its format invalid, CulinaryContacts will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
-Furthermore, certain edits can cause the CulinaryContacts to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
-</box>
-
 ### Reservations
+
+<box type="info" seamless>
+
+**Notes about reservations:**<br>
+
+* Currently, editing a person in the contacts panel does not update the details of the same person in the reservation panel.
+  * If the user intends to edit the reservation details of a person, they will have to:
+    1. Edit the person's details in the contacts panel.
+    2. Delete all reservations made by the person.
+    3. Add a new reservation for every reservation deleted in the previous step with the newly updated person.
+</box>
 
 #### Adding a reservation: `rsv`
 
@@ -359,12 +368,6 @@ Format: `rsvsort`
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
 --------------------------------------------------------------------------------------------------------------------
-
-## Glossary
-* **displayed person list**: The contacts or archived list of persons that you are currently viewing.
-
---------------------------------------------------------------------------------------------------------------------
-
 
 ## Command Summary
 
