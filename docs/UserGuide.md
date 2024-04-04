@@ -363,12 +363,6 @@ Format: `rsvsort`
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Glossary
-* **displayed person list**: The contacts or archived list of persons that you are currently viewing.
-
---------------------------------------------------------------------------------------------------------------------
-
-
 ## Command Summary
 
 | Command       | Format, Examples                                                                                                                                                             |
