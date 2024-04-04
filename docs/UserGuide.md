@@ -63,7 +63,7 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 
    * `delete 3` : Deletes the 3rd contact shown in the current list.
 
-   * `clear` : Deletes all contacts.
+   * `clear` : Removes all persons and reservations.
 
    * `exit` : Exits the app.
 
@@ -142,9 +142,9 @@ Press 'q' to close the help window.
 
 Format: `help`
 
-Remove all persons and reservations from CulinaryContacts.
-
 #### Clearing all entries: `clear`
+
+Remove all persons and reservations from CulinaryContacts.
 
 Format: `clear`
 
@@ -163,6 +163,7 @@ CulinaryContacts data are saved in the hard disk automatically after any command
 CulinaryContacts data are saved automatically as a JSON file `[JAR file location]/data/culinarycontacts.json`. Advanced users are welcome to update data directly by editing that data file.
 
 <box type="warning" seamless>
+   
 **Caution:**
 If your changes to the data file makes its format invalid, CulinaryContacts will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
 Furthermore, certain edits can cause the CulinaryContacts to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
