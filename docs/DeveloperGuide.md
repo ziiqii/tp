@@ -642,3 +642,15 @@ testers are expected to do more *exploratory* testing.
    1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
 
 1. _{ more test cases …​ }_
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Appendix: Planned Enhancement**
+
+Team size: 4
+
+1. **Use an ID system instead of name as the unique identifier**: The current unique identifier is the name of the person. 
+   This banned duplicate names to be recorded which is too restrictive as persons with the same name are quite common in reality.
+   The user may also want to only record the first or last name which may cause more duplicate names. We plan to use an ID system as the unique identifier which will differentiate each contact.
+2. 
+

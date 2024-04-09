@@ -195,6 +195,8 @@ Format: `exit`
 
 Adds a person to the _displayed person list_.
 
+* Duplicate names are not allowed i.e adding a new person with the same name as another existing person is not allowed.
+
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
 
 <box type="tip" seamless>
@@ -224,6 +226,7 @@ Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
 * When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
 * You can remove all the person’s tags by typing `t/` without
     specifying any tags after it.
+* Duplicate names are not allowed i.e editing a person's name to become the same as another existing person is not allowed.
 
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
