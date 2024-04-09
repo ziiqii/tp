@@ -228,7 +228,7 @@ Examples:
 
 Finds persons in the _displayed person list_ whose name contains any of the given keywords.
 
-Format: `find KEYWORD [MORE_KEYWORDS]`
+Format: `find KEYWORD [MORE_KEYWORDS]...`
 
 * The search is case-insensitive. e.g `hans` will match `Hans`.
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`.
@@ -245,7 +245,7 @@ Examples:
 
 Finds persons in the _displayed person list_ that have all the given tags .
 
-Format: `filter TAG [MORE_TAGS]`
+Format: `filter TAG [MORE_TAGS]...`
 
 * The search is case-insensitive. e.g `supplier` will match with `Supplier`.
 * Only full tags will be matched e.g. `supplier` will not match `suppliers`.
@@ -377,8 +377,8 @@ Format: `rsvsort`
 | **add**       | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`<br> e.g., `add n/Alex Yeoh p/87438807 e/alexyeoh@example.com a/Blk 30 Geylang Street 29, #01-40 t/supplier t/durian` |
 | **list**      | `list`                                                                                                                                                                       |
 | **edit**      | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                  |
-| **find**      | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                   |
-| **filter**    | `filter TAG [MORE_TAGS]`<br> e.g., `filter supplier seafood`                                                                                                                 |
+| **find**      | `find KEYWORD [MORE_KEYWORDS]...`<br> e.g., `find James Jake`                                                                                                                |
+| **filter**    | `filter TAG [MORE_TAGS]...`<br> e.g., `filter supplier seafood`                                                                                                              |
 | **delete**    | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                          |
 | **archive**   | `archive INDEX`<br> e.g., `archive 2`                                                                                                                                        |
 | **alist**     | `alist`                                                                                                                                                                      |
