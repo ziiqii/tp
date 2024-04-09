@@ -307,17 +307,6 @@ Format: `alist`
 
 ### Reservations
 
-<box type="info" seamless>
-
-**Notes about reservations:**<br>
-
-* Currently, editing a person in the contacts panel does not update the details of the same person in the reservation panel.
-  * If the user intends to edit the reservation details of a person, they will have to:
-    1. Edit the person's details in the contacts panel.
-    2. Delete all reservations made by the person.
-    3. Add a new reservation for every reservation deleted in the previous step with the newly updated person.
-</box>
-
 #### Adding a reservation: `rsv`
 
 Adds a reservation to CulinaryContacts.
@@ -352,6 +341,14 @@ Format: `rsvsort`
 * Upcoming reservations are always on top of expired reservations.
 * Upcoming reservations are sorted from earliest to latest.
 * Expired reservations are also sorted from earliest to latest.
+
+<box type="info" seamless>
+
+**Notes about archived contacts and reservations:**<br>
+* The reservation feature is a completely independent feature from the archive feature. This means that:
+    1. An archived contact can be used to add a reservation.
+    2. When a contact that currently has a reservation is archived, no changes will be made to that contact's reservations. 
+</box>
 
 --------------------------------------------------------------------------------------------------------------------
 
