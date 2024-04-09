@@ -248,7 +248,7 @@ Examples:
 
 #### Filtering persons by tag: `filter`
 
-Finds persons in the _displayed person list_ that have all the given tags .
+Finds persons in the _displayed person list_ that have all the given tags.
 
 Format: `filter TAG [MORE_TAGS]...`
 
@@ -332,7 +332,7 @@ Format: `rsv INDEX d/DATE t/TIME p/PAX`
 * The index **must be a positive integer** 1, 2, 3, …​
 * `DATE` **must be in yyyy-MM-dd** format.
 * `TIME` **must be in HHmm** format.
-* `PAX` **must be a positive integer**.
+* `PAX` **must be a positive integer**. Leading zeroes should be omitted, i.e., instead of typing `p/03`, type `p/3`.
 * 2 reservations made under the same name cannot have the same `DATE` and `TIME`, i.e., combination of `DATE`, `TIME` and name of person making reservation must be unique.
 
 Example:
