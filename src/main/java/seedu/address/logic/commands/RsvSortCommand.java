@@ -14,7 +14,7 @@ import seedu.address.model.reservation.Reservation;
 public class RsvSortCommand extends Command {
     public static final String COMMAND_WORD = "rsvsort";
 
-    public static final String MESSAGE_SUCCESS = "Sorted all reservation";
+    public static final String MESSAGE_SUCCESS = "Sorted all reservations";
 
 
     @Override
