@@ -74,7 +74,7 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 ## Interpreting the GUI
 
 ### Main Window
-![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/7995f6c2-220c-4070-905a-b10a7482131a)
+![image](images/main_window.png)
 
 | **Component**         | Description                                                                                                                                                                                                                                                                                                                                         |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -92,6 +92,8 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 | **Contact Index Number** | The `INDEX` used in `edit`, `delete` and `rsv` commands.     |
 | **Tags**                 | Tags are used for finding persons with the `filter` command. |
 
+* All fields on the contact card (`NAME`, `TAG`, `PHONE_NUMBER`, `ADDRESS`, `EMAIL`) will be truncated if 
+  they are too long, to maintain neatness. The character limit before truncation is sufficient for most inputs so normal usage is not hindered.
 * The 'supplier' tag is green.
 * The 'employee' tag is blue.
 * The 'customer' tag is yellow.
@@ -104,6 +106,9 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 |-------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | **Reservation Index Number**  | The `INDEX` used in the `rsvdel` command.                                                                                          |
 | **Expiry Flag**               | The expiry flag indicates if the date and time of the reservation is after the date and time when the application is launched, or after the date and time when `rsvsort` is invoked.
+
+* The person's `NAME`, `PHONE_NUMBER` and reservation's `PAX` will be truncated if they are too long, with 
+  the same reason as above.
 
 --------------------------------------------------------------------------------------------------------------------
 
