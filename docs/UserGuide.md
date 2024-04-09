@@ -92,6 +92,9 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 | **Contact Index Number** | The `INDEX` used in `edit`, `delete` and `rsv` commands.     |
 | **Tags**                 | Tags are used for finding persons with the `filter` command. |
 
+* All fields on the contact card (`NAME`, `TAG`, `PHONE_NUMBER`, `ADDRESS`, `EMAIL`) will be truncated if 
+  they are too long, to maintain neatness. The character limit before truncation is sufficient for quick 
+  recognition at a glance.
 * The 'supplier' tag is green.
 * The 'employee' tag is blue.
 * The 'customer' tag is yellow.
@@ -104,6 +107,9 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 |-------------------------------|-----------------------------------------------------------|
 | **Reservation Index Number**  | The `INDEX` used in the `rsvdel` command.                 |
 | **Expiry Flag**               | The expiry flag indicates if the reservation has expired. |
+
+* The person's `NAME`, `PHONE_NUMBER` and reservation's `PAX` will be truncated if they are too long, with 
+  the same reason as above.
 
 --------------------------------------------------------------------------------------------------------------------
 
