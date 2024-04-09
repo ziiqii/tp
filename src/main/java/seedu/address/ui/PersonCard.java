@@ -65,7 +65,8 @@ public class PersonCard extends UiPart<Region> {
      * @param tag The tag object for which a label is to be created.
      */
     public void createTagLabel(Tag tag) {
-        Label tagLabel = new Label(tag.tagName);
+        String truncatedTagValue = truncateString(tag.tagName, 20); // 50 letters before truncate
+        Label tagLabel = new Label(truncatedTagValue);
         switch (tag.tagName) {
         case "customer":
             tagLabel.setStyle("-fx-background-color: #F5B041;");
@@ -80,5 +81,19 @@ public class PersonCard extends UiPart<Region> {
             tagLabel.setStyle("-fx-background-color: #EAECEE;");
         }
         tags.getChildren().add(tagLabel);
+    }
+
+    /**
+     * Truncates a string to a specified length, appending "..." if it exceeds the length.
+     * @param str The string to abbreviate.
+     * @param maxLength The maximum length of the string.
+     * @return The abbreviated string.
+     */
+    private String truncateString(String str, int maxLength) {
+        if (str.length() > maxLength) {
+            return str.substring(0, maxLength) + "...";
+        } else {
+            return str;
+        }
     }
 }
