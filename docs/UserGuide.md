@@ -327,7 +327,8 @@ Format: `rsv INDEX d/DATE t/TIME p/PAX`
 * The index **must be a positive integer** 1, 2, 3, …​
 * `DATE` **must be in yyyy-MM-dd** format.
 * `TIME` **must be in HHmm** format.
-* `PAX` **must be a positive integer**.
+* `PAX` **must be a positive integer**. 
+* Adding multiple reservations with the same name at `INDEX`, `DATE` and `TIME` is not allowed.
 
 Example:
 * `rsv 1 d/2024-04-17 t/1800 p/8`
