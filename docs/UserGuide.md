@@ -226,7 +226,7 @@ Examples:
 
 #### Finding persons by name: `find`
 
-Finds persons whose names contain any of the given keywords in the _displayed person list_.
+Finds persons in the _displayed person list_ whose name contains any of the given keywords.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
@@ -243,7 +243,7 @@ Examples:
 
 #### Filtering persons by tag: `filter`
 
-Finds persons that are tagged with all the given tags in the _displayed person list_.
+Finds persons in the _displayed person list_ that have all the given tags .
 
 Format: `filter TAG [MORE_TAGS]`
 
