@@ -204,6 +204,18 @@ Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
 **Tip:** A person can have any number of tags (including 0).
 </box>
 
+* `NAME` cannot be blank.
+* `PHONE_NUMBER` should only contain numbers, and it should be at least 3 digits long.
+* `EMAIL` should be of the format local-part@domain and adhere to the following constraints:
+  1. The local-part should only contain alphanumeric characters and these special characters, excluding the parentheses, (+_.-). The local-part may not start or end with any special characters. 
+  2. This is followed by a '@' and then a domain name. The domain name is made up of domain labels separated by periods.
+  The domain name must:
+     - end with a domain label at least 2 characters long
+     - have each domain label start and end with alphanumeric characters
+     - have each domain label consist of alphanumeric characters, separated only by hyphens, if any
+* `ADDRESS` cannot be blank.
+* You cannot add 2 persons with the same `NAME`.
+
 Examples:
 * `add n/Alex Yeoh p/87438807 e/alexyeoh@example.com a/Blk 30 Geylang Street 29, #01-40 t/supplier t/durian`
 * `add n/David Lee p/91031282 e/david@example.com a/Blk 436 Serangoon Gardens Street 26, #02-43 t/customer`
