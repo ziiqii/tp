@@ -344,6 +344,10 @@
     -fx-border-radius: 2;
     -fx-background-radius: 2;
     -fx-font-size: 12;
+    -fx-max-width: 250px;
+    -fx-text-overrun: ellipsis;
+    -fx-ellipsis-string: "...";
+    -fx-overflow: hidden;
 }
 
 .heading {
