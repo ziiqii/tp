@@ -93,8 +93,7 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 | **Tags**                 | Tags are used for finding persons with the `filter` command. |
 
 * All fields on the contact card (`NAME`, `TAG`, `PHONE_NUMBER`, `ADDRESS`, `EMAIL`) will be truncated if 
-  they are too long, to maintain neatness. The character limit before truncation is sufficient for quick 
-  recognition at a glance.
+  they are too long, to maintain neatness. The character limit before truncation is sufficient for most inputs so normal usage is not hindered.
 * The 'supplier' tag is green.
 * The 'employee' tag is blue.
 * The 'customer' tag is yellow.
