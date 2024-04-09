@@ -75,7 +75,7 @@ public class Reservation {
         }
 
         return otherReservation != null
-                && otherReservation.getPerson().equals(getPerson())
+                && otherReservation.getPerson().isSamePerson(getPerson())
                 && otherReservation.getDate().equals(getDate())
                 && otherReservation.getTime().equals(getTime());
     }
