@@ -167,6 +167,6 @@ public class ParserUtil {
         if (!Pax.isValidPax(trimmedPax)) {
             throw new ParseException(Pax.MESSAGE_CONSTRAINTS);
         }
-        return new Pax(pax);
+        return new Pax(trimmedPax);
     }
 }
