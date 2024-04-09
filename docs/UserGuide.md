@@ -353,6 +353,7 @@ Format: `rsvsort`
 * Upcoming reservations are always on top of expired reservations.
 * Upcoming reservations are sorted from earliest to latest.
 * Expired reservations are also sorted from earliest to latest.
+* If you add an upcoming reservation and it becomes expired while the application is open, `rsvsort` will update the reservation card to show the expiry flag.
 
 --------------------------------------------------------------------------------------------------------------------
 
