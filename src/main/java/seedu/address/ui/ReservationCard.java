@@ -46,7 +46,12 @@ public class ReservationCard extends UiPart<Region> {
         phone.setText(reservation.getPerson().getPhone().value);
         date.setText(this.formatDate(reservation.getDate().value));
         time.setText(this.formatTime(reservation.getTime().value));
-        pax.setText(reservation.getPax().value + " people");
+
+        if (reservation.getPax().value.equals("1")) {
+            pax.setText(reservation.getPax().value + " person");
+        } else {
+            pax.setText(reservation.getPax().value + " people");
+        }
 
         if (this.reservation.passedReservationTime()) {
             ImageView statusIcon = new ImageView(new Image(getClass().getResourceAsStream("/images/text18-9.png")));
