@@ -263,7 +263,7 @@ Examples:
 
 #### Filtering persons by tag: `filter`
 
-Finds persons in the _displayed person list_ that have all the given tags .
+Finds persons in the _displayed person list_ that have all the given tags.
 
 Format: `filter TAG [MORE_TAGS]...`
 
@@ -330,13 +330,13 @@ Format: `alist`
 <box type="info" seamless>
 
 **Notes about reservations:**<br>
-
 * Currently, editing a person in the contacts panel does not update the details of the same person in the reservation panel.
 * If the user intends to edit the reservation details of a person, they will have to:
-  1. Edit the person's details in the contacts panel.
-  2. Delete all reservations made by the person.
-  3. Add a new reservation for every reservation deleted in the previous step with the newly updated person.
+    1. Edit the person's details in the contacts panel.
+    2. Delete all reservations made by the person.
+    3. Add a new reservation for every reservation deleted in the previous step with the newly updated person.
 </box>
+
 
 #### Adding a reservation: `rsv`
 
@@ -347,7 +347,7 @@ Format: `rsv INDEX d/DATE t/TIME p/PAX`
 * The index **must be a positive integer** 1, 2, 3, …​
 * `DATE` **must be in yyyy-MM-dd** format.
 * `TIME` **must be in HHmm** format.
-* `PAX` **must be a positive integer**.
+* `PAX` **must be a positive integer**. Leading zeroes should be omitted, i.e., instead of typing `p/03`, type `p/3`.
 * 2 reservations made under the same name cannot have the same `DATE` and `TIME`, i.e., combination of `DATE`, `TIME` and name of person making reservation must be unique.
 
 Example:
@@ -383,6 +383,11 @@ Format: `rsvsort`
 
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous CulinaryContacts home folder.
+
+**Q**: Does archiving a contact affect reservations that were made under that contact?<br>
+**A**: No. The reservation feature is a completely independent feature from the archive feature. This means that:
+1. When a contact that has a reservation is archived, no changes will be made to that contact's reservations.
+2. An archived contact can be used to add a reservation.
 
 --------------------------------------------------------------------------------------------------------------------
 
