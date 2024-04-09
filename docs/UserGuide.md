@@ -100,10 +100,10 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 ### Reservation Card
 ![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/d0f5018c-82c5-44e9-88ed-00de80e6d085)
 
-| **Component**                 | Description                                               |
-|-------------------------------|-----------------------------------------------------------|
-| **Reservation Index Number**  | The `INDEX` used in the `rsvdel` command.                 |
-| **Expiry Flag**               | The expiry flag indicates if the reservation has expired. |
+| **Component**                 | Description                                                                                                                        |
+|-------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| **Reservation Index Number**  | The `INDEX` used in the `rsvdel` command.                                                                                          |
+| **Expiry Flag**               | The expiry flag indicates if the date and time of the reservation is after the date and time when the application is launched, or after the date and time when `rsvsort` is invoked.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -228,7 +228,7 @@ Examples:
 
 Finds persons in the _displayed person list_ whose name contains any of the given keywords.
 
-Format: `find KEYWORD [MORE_KEYWORDS]`
+Format: `find KEYWORD [MORE_KEYWORDS]...`
 
 * The search is case-insensitive. e.g `hans` will match `Hans`.
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`.
@@ -245,7 +245,7 @@ Examples:
 
 Finds persons in the _displayed person list_ that have all the given tags .
 
-Format: `filter TAG [MORE_TAGS]`
+Format: `filter TAG [MORE_TAGS]...`
 
 * The search is case-insensitive. e.g `supplier` will match with `Supplier`.
 * Only full tags will be matched e.g. `supplier` will not match `suppliers`.
@@ -312,10 +312,10 @@ Format: `alist`
 **Notes about reservations:**<br>
 
 * Currently, editing a person in the contacts panel does not update the details of the same person in the reservation panel.
-  * If the user intends to edit the reservation details of a person, they will have to:
-    1. Edit the person's details in the contacts panel.
-    2. Delete all reservations made by the person.
-    3. Add a new reservation for every reservation deleted in the previous step with the newly updated person.
+* If the user intends to edit the reservation details of a person, they will have to:
+  1. Edit the person's details in the contacts panel.
+  2. Delete all reservations made by the person.
+  3. Add a new reservation for every reservation deleted in the previous step with the newly updated person.
 </box>
 
 #### Adding a reservation: `rsv`
@@ -328,6 +328,7 @@ Format: `rsv INDEX d/DATE t/TIME p/PAX`
 * `DATE` **must be in yyyy-MM-dd** format.
 * `TIME` **must be in HHmm** format.
 * `PAX` **must be a positive integer**.
+* 2 reservations made under the same name cannot have the same `DATE` and `TIME`, i.e., combination of `DATE`, `TIME` and name of person making reservation must be unique.
 
 Example:
 * `rsv 1 d/2024-04-17 t/1800 p/8`
@@ -352,6 +353,8 @@ Format: `rsvsort`
 * Upcoming reservations are always on top of expired reservations.
 * Upcoming reservations are sorted from earliest to latest.
 * Expired reservations are also sorted from earliest to latest.
+* If you add an upcoming reservation and it becomes expired while the application is open, the expiry flag will not automatically appear on the reservation card. 
+  * Calling `rsvsort` will update the reservation card to show the expiry flag.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -377,8 +380,8 @@ Format: `rsvsort`
 | **add**       | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`<br> e.g., `add n/Alex Yeoh p/87438807 e/alexyeoh@example.com a/Blk 30 Geylang Street 29, #01-40 t/supplier t/durian` |
 | **list**      | `list`                                                                                                                                                                       |
 | **edit**      | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                  |
-| **find**      | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                   |
-| **filter**    | `filter TAG [MORE_TAGS]`<br> e.g., `filter supplier seafood`                                                                                                                 |
+| **find**      | `find KEYWORD [MORE_KEYWORDS]...`<br> e.g., `find James Jake`                                                                                                                |
+| **filter**    | `filter TAG [MORE_TAGS]...`<br> e.g., `filter supplier seafood`                                                                                                              |
 | **delete**    | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                          |
 | **archive**   | `archive INDEX`<br> e.g., `archive 2`                                                                                                                                        |
 | **alist**     | `alist`                                                                                                                                                                      |

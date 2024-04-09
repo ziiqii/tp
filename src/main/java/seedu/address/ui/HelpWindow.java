@@ -166,10 +166,10 @@ public class HelpWindow extends UiPart<Stage> {
                 + "e.g., edit 1 p/91234567 e/johndoe@example.com"));
         guideItems.add(new CommandSummary("find", "Find contacts whose names contain "
                 + "any of the given keywords.\n"
-                + "find KEYWORD [MORE_KEYWORDS]\n"
+                + "find KEYWORD [MORE_KEYWORDS]...\n"
                 + "e.g., find John"));
         guideItems.add(new CommandSummary("filter", "Filter contacts with specified tags.\n"
-                + "filter TAG [MORE_TAGS]\n"
+                + "filter TAG [MORE_TAGS]...\n"
                 + "e.g., filter supplier seafood"));
         guideItems.add(new CommandSummary("delete", "Delete a contact.\n"
                 + "delete INDEX\n"
