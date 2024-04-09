@@ -137,7 +137,7 @@ public class ParserUtil {
         if (!RsvDate.isValidRsvDate(trimmedDate)) {
             throw new ParseException(RsvDate.MESSAGE_CONSTRAINTS);
         }
-        return new RsvDate(trimmedDate);
+        return new RsvDate(date);
     }
 
     /**
@@ -152,7 +152,7 @@ public class ParserUtil {
         if (!RsvTime.isValidRsvTime(trimmedTime)) {
             throw new ParseException(RsvTime.MESSAGE_CONSTRAINTS);
         }
-        return new RsvTime(trimmedTime);
+        return new RsvTime(time);
     }
 
     /**
@@ -167,6 +167,6 @@ public class ParserUtil {
         if (!Pax.isValidPax(trimmedPax)) {
             throw new ParseException(Pax.MESSAGE_CONSTRAINTS);
         }
-        return new Pax(trimmedPax);
+        return new Pax(pax);
     }
 }
