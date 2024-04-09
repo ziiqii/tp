@@ -100,10 +100,10 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 ### Reservation Card
 ![image](https://github.com/AY2324S2-CS2103T-W09-3/tp/assets/63834733/d0f5018c-82c5-44e9-88ed-00de80e6d085)
 
-| **Component**                 | Description                                                                                           |
-|-------------------------------|-------------------------------------------------------------------------------------------------------|
-| **Reservation Index Number**  | The `INDEX` used in the `rsvdel` command.                                                             |
-| **Expiry Flag**               | The expiry flag indicates if the date and time of the reservation is after the current date and time. |
+| **Component**                 | Description                                                                                                                        |
+|-------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| **Reservation Index Number**  | The `INDEX` used in the `rsvdel` command.                                                                                          |
+| **Expiry Flag**               | The expiry flag indicates if the date and time of the reservation is after the date and time when the application is launched, or after the date and time when `rsvsort` is invoked.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -312,10 +312,10 @@ Format: `alist`
 **Notes about reservations:**<br>
 
 * Currently, editing a person in the contacts panel does not update the details of the same person in the reservation panel.
-  * If the user intends to edit the reservation details of a person, they will have to:
-    1. Edit the person's details in the contacts panel.
-    2. Delete all reservations made by the person.
-    3. Add a new reservation for every reservation deleted in the previous step with the newly updated person.
+* If the user intends to edit the reservation details of a person, they will have to:
+  1. Edit the person's details in the contacts panel.
+  2. Delete all reservations made by the person.
+  3. Add a new reservation for every reservation deleted in the previous step with the newly updated person.
 </box>
 
 #### Adding a reservation: `rsv`
@@ -327,8 +327,8 @@ Format: `rsv INDEX d/DATE t/TIME p/PAX`
 * The index **must be a positive integer** 1, 2, 3, …​
 * `DATE` **must be in yyyy-MM-dd** format.
 * `TIME` **must be in HHmm** format.
-* `PAX` **must be a positive integer**. 
-* Adding multiple reservations with the same name at `INDEX`, `DATE` and `TIME` is not allowed.
+* `PAX` **must be a positive integer**.
+* 2 reservations made under the same name cannot have the same `DATE` and `TIME`, i.e., combination of `DATE`, `TIME` and name of person making reservation must be unique.
 
 Example:
 * `rsv 1 d/2024-04-17 t/1800 p/8`
@@ -353,7 +353,8 @@ Format: `rsvsort`
 * Upcoming reservations are always on top of expired reservations.
 * Upcoming reservations are sorted from earliest to latest.
 * Expired reservations are also sorted from earliest to latest.
-* If you add an upcoming reservation and it becomes expired while the application is open, `rsvsort` will update the reservation card to show the expiry flag.
+* If you add an upcoming reservation and it becomes expired while the application is open, the expiry flag will not automatically appear on the reservation card. 
+  * Calling `rsvsort` will update the reservation card to show the expiry flag.
 
 --------------------------------------------------------------------------------------------------------------------
 
