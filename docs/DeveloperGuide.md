@@ -649,8 +649,7 @@ testers are expected to do more *exploratory* testing.
 
 Team size: 4
 
-1. **Use an ID system as the unique identifier**: The current unique identifier is the name of the person. 
-   This banned duplicate names to be recorded which is too restrictive as persons with the same name are quite common in reality.
-   The user may also want to only record the first or last name which may cause more duplicate names. We plan to use an ID system as the unique identifier which will allow duplicate names to be recorded.
+1. **Use an ID field as the unique identifier**: The current unique identifier is the name of the person preventing addition of duplicate names. This is too restrictive as persons with the same name are quite common in reality.
+   The user may also want to only record the first or last name which may cause more duplicate names. We plan to use the person's ID field as an unique identifier, which will allow duplicate names to be recorded.
 2. 
 
