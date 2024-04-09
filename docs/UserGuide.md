@@ -133,7 +133,7 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
   e.g `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
 
 * Items with `…`​ after them can be used multiple times including zero times.<br>
-  e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/suppler`, `t/seafood t/supplier` etc.
+  e.g. `[t/TAG]…​` can be used as ` ` (i.e., 0 times), `t/suppler`, `t/seafood t/supplier` etc.
 
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
@@ -195,7 +195,7 @@ Format: `exit`
 
 Adds a person to the _displayed person list_.
 
-* Duplicate names are not allowed i.e adding a new person with the same name as another existing person is not allowed.
+* Duplicate names are not allowed i.e., adding a new person with the same name as another existing person is not allowed.
 
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
 
@@ -223,10 +223,10 @@ Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
 * Edits the person at the specified `INDEX`. The index refers to the index number shown in the _displayed person list_. The index **must be a positive integer** 1, 2, 3, …​
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
-* When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
+* When editing tags, the existing tags of the person will be removed i.e., adding of tags is not cumulative.
 * You can remove all the person’s tags by typing `t/` without
     specifying any tags after it.
-* Duplicate names are not allowed i.e editing a person's name to become the same as another existing person is not allowed.
+* Duplicate names are not allowed i.e., editing a person's name to become the same as another existing person is not allowed.
 
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
@@ -242,7 +242,7 @@ Format: `find KEYWORD [MORE_KEYWORDS]...`
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`.
 * Only the name is searched.
 * Only full words will be matched e.g. `Han` will not match `Hans`.
-* Persons matching at least one keyword will be returned (i.e. `OR` search).
+* Persons matching at least one keyword will be returned (i.e., `OR` search).
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`.
 
 Examples:
@@ -257,7 +257,7 @@ Format: `filter TAG [MORE_TAGS]...`
 
 * The search is case-insensitive. e.g `supplier` will match with `Supplier`.
 * Only full tags will be matched e.g. `supplier` will not match `suppliers`.
-* Persons matching all tags will be returned (i.e. `AND` search).
+* Persons matching all tags will be returned (i.e., `AND` search).
   e.g. `seafood supplier` will return persons with both `seafood` and `supplier` tag.
 
 Examples:
