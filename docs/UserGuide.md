@@ -353,14 +353,6 @@ Format: `rsvsort`
 * Upcoming reservations are sorted from earliest to latest.
 * Expired reservations are also sorted from earliest to latest.
 
-<box type="info" seamless>
-
-**Notes about archived contacts and reservations:**<br>
-* The reservation feature is a completely independent feature from the archive feature. This means that:
-    1. An archived contact can be used to add a reservation.
-    2. When a contact that currently has a reservation is archived, no changes will be made to that contact's reservations. 
-</box>
-
 --------------------------------------------------------------------------------------------------------------------
 
 
@@ -368,6 +360,11 @@ Format: `rsvsort`
 
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous CulinaryContacts home folder.
+
+**Q**: Does archiving a contact affect reservations that were made under that contact?<br>
+**A**: No. The reservation feature is a completely independent feature from the archive feature. This means that:
+1. When a contact that has a reservation is archived, no changes will be made to that contact's reservations.
+2. An archived contact can be used to add a reservation.
 
 --------------------------------------------------------------------------------------------------------------------
 
