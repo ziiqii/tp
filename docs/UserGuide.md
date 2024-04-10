@@ -195,8 +195,6 @@ Format: `exit`
 
 Adds a person to the _displayed person list_.
 
-* Duplicate names are not allowed i.e., adding a new person with the same name as another existing person is not allowed.
-
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
 
 <box type="tip" seamless>
@@ -214,7 +212,7 @@ Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
      - have each domain label start and end with alphanumeric characters
      - have each domain label consist of alphanumeric characters, separated only by hyphens, if any
 * `ADDRESS` cannot be blank.
-* You cannot add 2 persons with the same `NAME`.
+* Duplicate names are not allowed (i.e., adding a new person with the same name as another existing person is not allowed).
 
 Examples:
 * `add n/Alex Yeoh p/87438807 e/alexyeoh@example.com a/Blk 30 Geylang Street 29, #01-40 t/supplier t/durian`
@@ -235,10 +233,10 @@ Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
 * Edits the person at the specified `INDEX`. The index refers to the index number shown in the _displayed person list_. The index **must be a positive integer** 1, 2, 3, …​
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
-* When editing tags, the existing tags of the person will be removed i.e., adding of tags is not cumulative.
+* When editing tags, the existing tags of the person will be removed (i.e., adding of tags is not cumulative).
 * You can remove all the person’s tags by typing `t/` without
     specifying any tags after it.
-* Duplicate names are not allowed i.e., editing a person's name to become the same as another existing person is not allowed.
+* Duplicate names are not allowed (i.e., editing a person's name to become the same as another existing person is not allowed).
 
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
@@ -347,8 +345,8 @@ Format: `rsv INDEX d/DATE t/TIME p/PAX`
 * The index **must be a positive integer** 1, 2, 3, …​
 * `DATE` **must be in yyyy-MM-dd** format.
 * `TIME` **must be in HHmm** format.
-* `PAX` **must be a positive integer**. Leading zeroes should be omitted, i.e., instead of typing `p/03`, type `p/3`.
-* 2 reservations made under the same name cannot have the same `DATE` and `TIME`, i.e., combination of `DATE`, `TIME` and name of person making reservation must be unique.
+* `PAX` **must be a positive integer**. Leading zeroes should be omitted (e.g., instead of typing `p/03`, type `p/3`).
+* 2 reservations made under the same name cannot have the same `DATE` and `TIME` (i.e., combination of `DATE`, `TIME` and name of person making reservation must be unique).
 
 Example:
 * `rsv 1 d/2024-04-17 t/1800 p/8`
