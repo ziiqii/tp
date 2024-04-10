@@ -356,7 +356,7 @@ Deletes the specified reservation from CulinaryContacts.
 
 Format: `rsvdel INDEX`
 * Deletes the reservation at the specified `INDEX`.
-* The index refers to the index number shown in the _displayed reservation list_.
+* The index refers to the index number shown in the reservation list.
 * The index **must be a positive integer** 1, 2, 3, …​
 
 Example:
