@@ -161,11 +161,10 @@ Removes all persons and reservations from CulinaryContacts.
 
 Format: `clear`
 
-* A pop-up confirmation message will appear, where the user must confirm their choice.<br>
-
-  ![result for 'clear'](images/clear_confirmation.png)
+* A confirmation message will be shown.<br>
     * If user types `y`, all persons and reservations will be cleared and a success message will be shown: `Clear successful!`.
     * If user types `n` or anything else, the clear command will be cancelled and a message will be shown: `Clear cancelled!`.
+ ![result for 'clear'](images/clear_confirmation.png)
 
 
 #### Saving the data
