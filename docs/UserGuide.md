@@ -149,7 +149,7 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 #### Viewing help: `help`
 
 Shows the full command summary of CulinaryContacts at a glance.
-Press 'q' to close the help window.
+Press `q` to close the help window.
 
 Format: `help`
 
