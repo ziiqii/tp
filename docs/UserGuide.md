@@ -306,7 +306,7 @@ Removes the specified person from the archived list and adds the person back int
 Format: `unarchive INDEX`
 
 * Unarchives the person at the specified `INDEX`.
-* The index refers to the index number shown in the _displayed person list_.
+* The index refers to the index number shown in the archived list.
 * The index **must be a positive integer** 1, 2, 3, ...
 * This command can only be performed while viewing the archived list. Type `alist` to view the archived list.
 
