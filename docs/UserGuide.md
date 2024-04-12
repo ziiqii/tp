@@ -132,13 +132,13 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 * Items in square brackets are optional.<br>
   e.g `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
 
-* Items with `…`​ after them can be used multiple times including zero times.<br>
-  e.g. `[t/TAG]…​` can be used as ` ` (i.e., 0 times), `t/suppler`, `t/seafood t/supplier` etc.
+* Items with `…`​ after them can be used multiple times.<br>
+  e.g. `[t/TAG]…​` can be used as `t/supplier`, `t/seafood t/supplier` etc.
 
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`, `alist`, `rsvsort`) will be ignored.<br>
+* Extraneous parameters for commands that do not take in parameters (`help`, `list`, `exit`, `clear`, `alist`, `rsvsort`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
