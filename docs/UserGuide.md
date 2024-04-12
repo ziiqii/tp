@@ -398,17 +398,19 @@ Format: `rsvsort`
 | Command       | Format, Examples                                                                                                                                                             |
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **help**      | `help`                                                                                                                                                                       |
-| **add**       | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`<br> e.g., `add n/Alex Yeoh p/87438807 e/alexyeoh@example.com a/Blk 30 Geylang Street 29, #01-40 t/supplier t/durian` |
+| **clear**     | `clear`                                                                                                                                                                      |
+| **exit**      | `exit`                                                                                                                                                                       |
+| **add**       | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`<br> e.g., `add n/Alex Yeoh p/87438807 e/alexyeoh@example.com a/Blk 30 Geylang Street 29, #01-40 t/supplier t/durian`  |
 | **list**      | `list`                                                                                                                                                                       |
-| **edit**      | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                  |
+| **edit**      | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                   |
 | **find**      | `find KEYWORD [MORE_KEYWORDS]...`<br> e.g., `find James Jake`                                                                                                                |
 | **filter**    | `filter TAG [MORE_TAGS]...`<br> e.g., `filter supplier seafood`                                                                                                              |
 | **delete**    | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                          |
 | **archive**   | `archive INDEX`<br> e.g., `archive 2`                                                                                                                                        |
-| **alist**     | `alist`                                                                                                                                                                      |
 | **unarchive** | `unarchive INDEX`<br> e.g., `unarchive 2`                                                                                                                                    |
+| **alist**     | `alist`                                                                                                                                                                      |
 | **rsv**       | `rsv INDEX d/DATE t/TIME p/PAX`<br> e.g., `rsv 1 d/2024-04-15 t/1800 p/4`                                                                                                    |
 | **rsvdel**    | `rsvdel INDEX`<br> e.g., `rsvdel 1`                                                                                                                                          |
 | **rsvsort**   | `rsvsort`                                                                                                                                                                    |
-| **clear**     | `clear`                                                                                                                                                                      |
+
 
