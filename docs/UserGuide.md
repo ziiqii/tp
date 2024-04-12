@@ -293,7 +293,7 @@ Removes the specified person from the contacts list and adds the person into the
 Format: `archive INDEX`
 
 * Archives the person at the specified `INDEX`.
-* The index refers to the index number shown in the _displayed person list_. 
+* The index refers to the index number shown in the contacts list.
 * The index **must be a positive integer** 1, 2, 3, ...
 * This command can only be performed while viewing the contacts list. Type `list` to view the contacts list.
 
