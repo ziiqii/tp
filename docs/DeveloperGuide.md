@@ -645,11 +645,11 @@ testers are expected to do more *exploratory* testing.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Planned Enhancement**
+## **Appendix: Planned Enhancements**
 
 Team size: 4
 
-1. **Use an ID field as the unique identifier**: The current unique identifier is the name of the person preventing addition of duplicate names. This is too restrictive as persons with the same name are quite common in reality.
-   The user may also want to only record the first or last name which may cause more duplicate names. We plan to use the person's ID field as an unique identifier, which will allow duplicate names to be recorded.
-2. 
+1. **Use an ID field as the unique identifier**: The current unique identifier is the name of the person preventing addition of duplicate names. This is too restrictive as persons with the same name are quite common in reality. The user may also want to only record the first or last name which may cause more duplicate names. We plan to use the person's ID field as a unique identifier, which will allow duplicate names to be recorded.
+2. **Sync contact updates with reservation**: Currently, when a user edits a contact's name or phone number in the contacts list, these changes are not reflected in existing reservations made for that contact. As a result, the reservation records become inconsistent with the updated contact details. We plan to enhance this feature by ensuring that any updates to a contact in the contacts or archived list will automatically update the contact's details in the reservation list. For example, if the contact John Doe's phone number is updated, all reservations under John Doe's name will automatically reflect this new phone number.
+
 
