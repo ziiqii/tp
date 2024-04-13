@@ -92,7 +92,7 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 | **Contact Index Number** | The `INDEX` used in `edit`, `delete` and `rsv` commands.     |
 | **Tags**                 | Tags are used for finding persons with the `filter` command. |
 
-* All fields on the contact card (`NAME`, `TAG`, `PHONE_NUMBER`, `ADDRESS`, `EMAIL`) will be truncated if 
+* The fields `NAME`, `PHONE_NUMBER`, `ADDRESS` and `EMAIL` on the contact card will be truncated if 
   they are too long, to maintain neatness. The character limit before truncation is sufficient for most inputs so normal usage is not hindered.
 * The 'supplier' tag is green.
 * The 'employee' tag is blue.
@@ -107,7 +107,7 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 | **Reservation Index Number**  | The `INDEX` used in the `rsvdel` command.                                                                                          |
 | **Expiry Flag**               | The expiry flag indicates if the date and time of the reservation is after the date and time when the application is launched, or after the date and time when `rsvsort` is invoked.
 
-* The person's `NAME`, `PHONE_NUMBER` and reservation's `PAX` will be truncated if they are too long, with 
+* The person's `NAME`, `PHONE_NUMBER` and reservation's `PAX` on the reservation card will be truncated if they are too long, with 
   the same reason as above.
 
 --------------------------------------------------------------------------------------------------------------------
@@ -132,13 +132,13 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 * Items in square brackets are optional.<br>
   e.g `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
 
-* Items with `…`​ after them can be used multiple times including zero times.<br>
-  e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/suppler`, `t/seafood t/supplier` etc.
+* Items with `…`​ after them can be used multiple times.<br>
+  e.g. `[t/TAG]…​` can be used as `t/supplier`, `t/seafood t/supplier` etc.
 
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`, `alist`, `rsvsort`) will be ignored.<br>
+* Extraneous parameters for commands that do not take in parameters (`help`, `list`, `exit`, `clear`, `alist`, `rsvsort`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
@@ -149,7 +149,7 @@ CulinaryContacts is a **desktop app for managing contacts and reservations in yo
 #### Viewing help: `help`
 
 Shows the full command summary of CulinaryContacts at a glance.
-Press 'q' to close the help window.
+Press `q` to close the help window.
 
 Format: `help`
 
@@ -161,11 +161,10 @@ Removes all persons and reservations from CulinaryContacts.
 
 Format: `clear`
 
-* A pop-up confirmation message will appear, where the user must confirm their choice.<br>
-
-  ![result for 'clear'](images/clear_confirmation.png)
+* A confirmation message will be shown.<br>
     * If user types `y`, all persons and reservations will be cleared and a success message will be shown: `Clear successful!`.
     * If user types `n` or anything else, the clear command will be cancelled and a message will be shown: `Clear cancelled!`.
+ ![result for 'clear'](images/clear_confirmation.png)
 
 
 #### Saving the data
@@ -202,6 +201,18 @@ Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
 **Tip:** A person can have any number of tags (including 0).
 </box>
 
+* `NAME` cannot be blank.
+* `PHONE_NUMBER` should only contain numbers, and it should be at least 3 digits long.
+* `EMAIL` should be of the format local-part@domain and adhere to the following constraints:
+  1. The local-part should only contain alphanumeric characters and these special characters, excluding the parentheses, (+_.-). The local-part may not start or end with any special characters. 
+  2. This is followed by a '@' and then a domain name. The domain name is made up of domain labels separated by periods.
+  The domain name must:
+     - end with a domain label at least 2 characters long
+     - have each domain label start and end with alphanumeric characters
+     - have each domain label consist of alphanumeric characters, separated only by hyphens, if any
+* `ADDRESS` cannot be blank.
+* Duplicate names are not allowed (i.e., adding a new person with the same name as another existing person is not allowed).
+
 Examples:
 * `add n/Alex Yeoh p/87438807 e/alexyeoh@example.com a/Blk 30 Geylang Street 29, #01-40 t/supplier t/durian`
 * `add n/David Lee p/91031282 e/david@example.com a/Blk 436 Serangoon Gardens Street 26, #02-43 t/customer`
@@ -221,9 +232,10 @@ Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
 * Edits the person at the specified `INDEX`. The index refers to the index number shown in the _displayed person list_. The index **must be a positive integer** 1, 2, 3, …​
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
-* When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
+* When editing tags, the existing tags of the person will be removed (i.e., adding of tags is not cumulative).
 * You can remove all the person’s tags by typing `t/` without
     specifying any tags after it.
+* Duplicate names are not allowed (i.e., editing a person's name to become the same as another existing person is not allowed).
 
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
@@ -239,8 +251,7 @@ Format: `find KEYWORD [MORE_KEYWORDS]...`
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`.
 * Only the name is searched.
 * Only full words will be matched e.g. `Han` will not match `Hans`.
-* Persons matching at least one keyword will be returned (i.e. `OR` search).
-  e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`.
+* Persons matching at least one keyword will be returned (i.e., `OR` search).
 
 Examples:
 * `find John` returns `john` and `John Doe`.
@@ -248,13 +259,13 @@ Examples:
 
 #### Filtering persons by tag: `filter`
 
-Finds persons in the _displayed person list_ that have all the given tags .
+Finds persons in the _displayed person list_ that have all the given tags.
 
 Format: `filter TAG [MORE_TAGS]...`
 
 * The search is case-insensitive. e.g `supplier` will match with `Supplier`.
 * Only full tags will be matched e.g. `supplier` will not match `suppliers`.
-* Persons matching all tags will be returned (i.e. `AND` search).
+* Persons matching all tags will be returned (i.e., `AND` search).
   e.g. `seafood supplier` will return persons with both `seafood` and `supplier` tag.
 
 Examples:
@@ -282,7 +293,7 @@ Removes the specified person from the contacts list and adds the person into the
 Format: `archive INDEX`
 
 * Archives the person at the specified `INDEX`.
-* The index refers to the index number shown in the _displayed person list_. 
+* The index refers to the index number shown in the contacts list.
 * The index **must be a positive integer** 1, 2, 3, ...
 * This command can only be performed while viewing the contacts list. Type `list` to view the contacts list.
 
@@ -295,7 +306,7 @@ Removes the specified person from the archived list and adds the person back int
 Format: `unarchive INDEX`
 
 * Unarchives the person at the specified `INDEX`.
-* The index refers to the index number shown in the _displayed person list_.
+* The index refers to the index number shown in the archived list.
 * The index **must be a positive integer** 1, 2, 3, ...
 * This command can only be performed while viewing the archived list. Type `alist` to view the archived list.
 
@@ -315,13 +326,13 @@ Format: `alist`
 <box type="info" seamless>
 
 **Notes about reservations:**<br>
-
 * Currently, editing a person in the contacts panel does not update the details of the same person in the reservation panel.
 * If the user intends to edit the reservation details of a person, they will have to:
-  1. Edit the person's details in the contacts panel.
-  2. Delete all reservations made by the person.
-  3. Add a new reservation for every reservation deleted in the previous step with the newly updated person.
+    1. Edit the person's details in the contacts panel.
+    2. Delete all reservations made by the person.
+    3. Add a new reservation for every reservation deleted in the previous step with the newly updated person.
 </box>
+
 
 #### Adding a reservation: `rsv`
 
@@ -332,8 +343,8 @@ Format: `rsv INDEX d/DATE t/TIME p/PAX`
 * The index **must be a positive integer** 1, 2, 3, …​
 * `DATE` **must be in yyyy-MM-dd** format.
 * `TIME` **must be in HHmm** format.
-* `PAX` **must be a positive integer**.
-* 2 reservations made under the same name cannot have the same `DATE` and `TIME`, i.e., combination of `DATE`, `TIME` and name of person making reservation must be unique.
+* `PAX` **must be a positive integer**. Leading zeroes should be omitted (e.g., instead of typing `p/03`, type `p/3`).
+* 2 reservations made under the same name cannot have the same `DATE` and `TIME` (i.e., combination of `DATE`, `TIME` and name of person making reservation must be unique).
 
 Example:
 * `rsv 1 d/2024-04-17 t/1800 p/8`
@@ -344,7 +355,7 @@ Deletes the specified reservation from CulinaryContacts.
 
 Format: `rsvdel INDEX`
 * Deletes the reservation at the specified `INDEX`.
-* The index refers to the index number shown in the _displayed reservation list_.
+* The index refers to the index number shown in the reservation list.
 * The index **must be a positive integer** 1, 2, 3, …​
 
 Example:
@@ -369,6 +380,11 @@ Format: `rsvsort`
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous CulinaryContacts home folder.
 
+**Q**: Does archiving a contact affect reservations that were made under that contact?<br>
+**A**: No. The reservation feature is a completely independent feature from the archive feature. This means that:
+1. When a contact that has a reservation is archived, no changes will be made to that contact's reservations.
+2. An archived contact can be used to add a reservation.
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Known Issues
@@ -382,17 +398,19 @@ Format: `rsvsort`
 | Command       | Format, Examples                                                                                                                                                             |
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **help**      | `help`                                                                                                                                                                       |
-| **add**       | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`<br> e.g., `add n/Alex Yeoh p/87438807 e/alexyeoh@example.com a/Blk 30 Geylang Street 29, #01-40 t/supplier t/durian` |
+| **clear**     | `clear`                                                                                                                                                                      |
+| **exit**      | `exit`                                                                                                                                                                       |
+| **add**       | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`<br> e.g., `add n/Alex Yeoh p/87438807 e/alexyeoh@example.com a/Blk 30 Geylang Street 29, #01-40 t/supplier t/durian`  |
 | **list**      | `list`                                                                                                                                                                       |
-| **edit**      | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                  |
+| **edit**      | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                   |
 | **find**      | `find KEYWORD [MORE_KEYWORDS]...`<br> e.g., `find James Jake`                                                                                                                |
 | **filter**    | `filter TAG [MORE_TAGS]...`<br> e.g., `filter supplier seafood`                                                                                                              |
 | **delete**    | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                          |
 | **archive**   | `archive INDEX`<br> e.g., `archive 2`                                                                                                                                        |
-| **alist**     | `alist`                                                                                                                                                                      |
 | **unarchive** | `unarchive INDEX`<br> e.g., `unarchive 2`                                                                                                                                    |
+| **alist**     | `alist`                                                                                                                                                                      |
 | **rsv**       | `rsv INDEX d/DATE t/TIME p/PAX`<br> e.g., `rsv 1 d/2024-04-15 t/1800 p/4`                                                                                                    |
 | **rsvdel**    | `rsvdel INDEX`<br> e.g., `rsvdel 1`                                                                                                                                          |
 | **rsvsort**   | `rsvsort`                                                                                                                                                                    |
-| **clear**     | `clear`                                                                                                                                                                      |
+
 

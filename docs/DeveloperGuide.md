@@ -578,7 +578,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 1. Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
 1. Should be able to hold up to 1000 persons while ensuring that commands can be executed within two seconds.
-1. A user with above average typing speed (40 wpm) for regular English text (i.e. not code, not system admin commands) should be able to accomplish most tasks faster using commands than using the mouse.
+1. A user with above average typing speed (40 wpm) for regular English text (i.e., not code, not system admin commands) should be able to accomplish most tasks faster using commands than using the mouse.
 1. New users should be able to perform basic operations (add, edit, list, delete contacts) with some guidance from the help documentation.
 1. The product is not required to handle financial or inventory aspects of managing a restaurant.
 1. All text must be at least font size 12 to ensure readability.
@@ -642,3 +642,14 @@ testers are expected to do more *exploratory* testing.
    1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
 
 1. _{ more test cases …​ }_
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Appendix: Planned Enhancement**
+
+Team size: 4
+
+1. **Use an ID field as the unique identifier**: The current unique identifier is the name of the person preventing addition of duplicate names. This is too restrictive as persons with the same name are quite common in reality.
+   The user may also want to only record the first or last name which may cause more duplicate names. We plan to use the person's ID field as an unique identifier, which will allow duplicate names to be recorded.
+2. 
+
